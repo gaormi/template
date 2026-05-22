@@ -54,11 +54,53 @@
   --color-rj-800: #572095;
   --color-rj-900: #491d7a;
 
+  /* Training certification track cards */
+  --color-cert-gdc-bg: #f0f4ff;
+  --color-cert-gdc-dot: #4f46e5;
+  --color-cert-gdc-text: #1e3a8a;
+  --color-cert-gdc-decor-start: #c7d2fe;
+  --color-cert-gdc-decor-end: #6366f1;
+
+  --color-cert-ccc-bg: #fffcf0;
+  --color-cert-ccc-dot: #eab308;
+  --color-cert-ccc-text: #423800;
+  --color-cert-ccc-decor-start: #fef08a;
+  --color-cert-ccc-decor-end: #eab308;
+
+  --color-cert-jdr-bg: #ebf5ee;
+  --color-cert-jdr-dot: #2d9966;
+  --color-cert-jdr-text: #123d29;
+  --color-cert-jdr-decor-start: #bde2cb;
+  --color-cert-jdr-decor-end: #2d9966;
+
+  --color-cert-ccf-bg: #fff4ed;
+  --color-cert-ccf-dot: #ff7733;
+  --color-cert-ccf-text: #2b1a10;
+  --color-cert-ccf-decor-start: #ffd5bb;
+  --color-cert-ccf-decor-end: #ff7733;
+
+  /* Training course cards */
+  --color-course-blue-action: #b6d2e6;
+  --color-course-blue-tag-bg: #eaf4fa;
+  --color-course-blue-text: #5f87a3;
+  --color-course-green-action: #b8d7be;
+  --color-course-green-tag-bg: #e4f0e6;
+  --color-course-green-text: #6f9576;
+  --color-course-orange-action: #f6ca9d;
+  --color-course-orange-tag-bg: #fcecdf;
+  --color-course-orange-text: #bc875d;
+  --color-course-purple-action: #ccc3e8;
+  --color-course-all-tag-bg: #e6e0f3;
+  --color-course-all-text: #7e70a8;
+
+  --color-training-grid: #e2e8f0;
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-newsreader);
   --font-mono: var(--font-fira);
 }
 

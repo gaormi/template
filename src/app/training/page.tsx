@@ -1,8 +1,38 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 import Button from "~/components/ui/Button";
 import StepAccordion from "~/components/ui/StepAccordion";
+
+const pageTitle = "Mediator Training in Virginia | Fairfield Center";
+const pageDescription =
+  "Become a Virginia certified mediator with Fairfield Center's Supreme Court-approved training tracks, mentorship support, course schedule, and application resources.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/training",
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/training",
+    images: [
+      {
+        url: "/photos/training-hero.jpg",
+        alt: "Fairfield Center mediator training program",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: ["/photos/training-hero.jpg"],
+  },
+};
 
 const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
@@ -158,35 +188,35 @@ const tracks = [
 
 const trackStyles: Record<string, { bg: string; dot: string; title: string; decorFrom: string; decorTo: string; decor: "puzzle" | "diamond" | "leaves" | "cube" }> = {
   gdc: {
-    bg: "bg-[#F0F4FF]",
-    dot: "bg-[#4F46E5]",
-    title: "text-[#1E3A8A]",
-    decorFrom: "#C7D2FE",
-    decorTo: "#6366F1",
+    bg: "bg-cert-gdc-bg",
+    dot: "bg-cert-gdc-dot",
+    title: "text-cert-gdc-text",
+    decorFrom: "var(--color-cert-gdc-decor-start)",
+    decorTo: "var(--color-cert-gdc-decor-end)",
     decor: "puzzle",
   },
   ccc: {
-    bg: "bg-[#FFFCF0]",
-    dot: "bg-[#EAB308]",
-    title: "text-[#423800]",
-    decorFrom: "#FEF08A",
-    decorTo: "#EAB308",
+    bg: "bg-cert-ccc-bg",
+    dot: "bg-cert-ccc-dot",
+    title: "text-cert-ccc-text",
+    decorFrom: "var(--color-cert-ccc-decor-start)",
+    decorTo: "var(--color-cert-ccc-decor-end)",
     decor: "diamond",
   },
   jdr: {
-    bg: "bg-[#EBF5EE]",
-    dot: "bg-[#2D9966]",
-    title: "text-[#123D29]",
-    decorFrom: "#BDE2CB",
-    decorTo: "#2D9966",
+    bg: "bg-cert-jdr-bg",
+    dot: "bg-cert-jdr-dot",
+    title: "text-cert-jdr-text",
+    decorFrom: "var(--color-cert-jdr-decor-start)",
+    decorTo: "var(--color-cert-jdr-decor-end)",
     decor: "leaves",
   },
   ccf: {
-    bg: "bg-[#FFF4ED]",
-    dot: "bg-[#FF7733]",
-    title: "text-[#2B1A10]",
-    decorFrom: "#FFD5BB",
-    decorTo: "#FF7733",
+    bg: "bg-cert-ccf-bg",
+    dot: "bg-cert-ccf-dot",
+    title: "text-cert-ccf-text",
+    decorFrom: "var(--color-cert-ccf-decor-start)",
+    decorTo: "var(--color-cert-ccf-decor-end)",
     decor: "cube",
   },
 };
@@ -375,28 +405,28 @@ const courses: Course[] = [
   },
 ];
 
-const allTracksTagTheme = "bg-[#E6E0F3]/75 text-[#7E70A8]";
+const allTracksTagTheme = "bg-course-all-tag-bg/75 text-course-all-text";
 
 const courseTagThemes: Record<CourseTone, { btn: string; tag: string; title: string }> = {
   blue: {
-    btn: "bg-[#B6D2E6] text-white",
-    tag: "bg-[#EAF4FA]/85 text-[#5F87A3]",
-    title: "group-hover:text-[#5F87A3]",
+    btn: "bg-course-blue-action text-white",
+    tag: "bg-course-blue-tag-bg/85 text-course-blue-text",
+    title: "group-hover:text-course-blue-text",
   },
   green: {
-    btn: "bg-[#B8D7BE] text-white",
-    tag: "bg-[#E4F0E6]/80 text-[#6F9576]",
-    title: "group-hover:text-[#6F9576]",
+    btn: "bg-course-green-action text-white",
+    tag: "bg-course-green-tag-bg/80 text-course-green-text",
+    title: "group-hover:text-course-green-text",
   },
   orange: {
-    btn: "bg-[#F6CA9D] text-white",
-    tag: "bg-[#FCECDF]/80 text-[#BC875D]",
-    title: "group-hover:text-[#BC875D]",
+    btn: "bg-course-orange-action text-white",
+    tag: "bg-course-orange-tag-bg/80 text-course-orange-text",
+    title: "group-hover:text-course-orange-text",
   },
   purple: {
-    btn: "bg-[#CCC3E8] text-white",
+    btn: "bg-course-purple-action text-white",
     tag: allTracksTagTheme,
-    title: "group-hover:text-[#7E70A8]",
+    title: "group-hover:text-course-all-text",
   },
 };
 
@@ -511,7 +541,7 @@ export default function TrainingPage() {
         <div
           className="pointer-events-none absolute inset-0 opacity-60"
           style={{
-            backgroundImage: "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
+            backgroundImage: "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             maskImage: "radial-gradient(circle at center, black, transparent 80%)",
             WebkitMaskImage: "radial-gradient(circle at center, black, transparent 80%)",

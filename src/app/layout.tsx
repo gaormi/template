@@ -1,8 +1,15 @@
 import type { Metadata, Viewport } from "next";
 
-import { Inter, Fira_Code } from "next/font/google";
+import { Fira_Code, Inter, Newsreader } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  weight: "variable",
+  style: ["normal", "italic"],
+  display: "swap",
+});
 const fira = Fira_Code({
   subsets: ["latin"],
   variable: "--font-fira",
@@ -70,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${fira.variable} font-sans`}
+        className={`${inter.variable} ${newsreader.variable} ${fira.variable} font-sans`}
       >
         <Providers>
           <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100">
