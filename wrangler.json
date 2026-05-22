@@ -1,13 +1,13 @@
 {
   "main": ".open-next/worker.js",
-  "name": "<YOUR_WORKER_NAME>",
+  "name": "fairfield-center",
   "compatibility_date": "2025-03-25",
   "compatibility_flags": ["nodejs_compat"],
   "hyperdrive": [
     {
       "binding": "HYPERDRIVE",
       "id": "<YOUR_HYPERDRIVE_ID>",
-      "localConnectionString": "<YOUR_LOCAL_DB_CONNECTION_STRING>"
+      "localConnectionString": "postgresql://postgres:postgres@localhost:5432/fairfield"
     }
   ],
   "assets": {
@@ -17,13 +17,13 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "<YOUR_WORKER_NAME>"
+      "service": "fairfield-center"
     }
   ],
   "r2_buckets": [
     {
       "binding": "NEXT_INC_CACHE_R2_BUCKET",
-      "bucket_name": "<YOUR_R2_BUCKET_NAME>"
+      "bucket_name": "fairfield-center-cache"
     }
   ],
   "observability": {

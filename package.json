@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build --webpack",
     "c": "lsof -ti :3000 | xargs kill -9",
     "p": "node scripts/dev.js",
@@ -47,7 +47,7 @@
     "typescript": "^5.8.3"
   },
   "engines": {
-    "node": "24.10.0"
+    "node": ">=24.0.0"
   },
   "license": "MIT"
 }

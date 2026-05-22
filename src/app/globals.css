@@ -6,6 +6,54 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  /* Primary / Mediation — Blue #2984D1 */
+  --color-primary-50: #eff7ff;
+  --color-primary-100: #dbeefe;
+  --color-primary-200: #bfdffd;
+  --color-primary-300: #93cbfb;
+  --color-primary-400: #5eaef7;
+  --color-primary-500: #2984d1;
+  --color-primary-600: #2272b8;
+  --color-primary-700: #1d5e96;
+  --color-primary-800: #1c4f7c;
+  --color-primary-900: #1c4367;
+
+  /* Training — Green #2D9966 */
+  --color-training-50: #f0faf5;
+  --color-training-100: #d6f2e4;
+  --color-training-200: #a8e4c7;
+  --color-training-300: #6ecfa3;
+  --color-training-400: #3db87f;
+  --color-training-500: #2d9966;
+  --color-training-600: #237a51;
+  --color-training-700: #1d6243;
+  --color-training-800: #194e36;
+  --color-training-900: #15412d;
+
+  /* Co-Parenting — Orange #E08A3C */
+  --color-coparent-50: #fff8f0;
+  --color-coparent-100: #feedd6;
+  --color-coparent-200: #fdd7a8;
+  --color-coparent-300: #fabb70;
+  --color-coparent-400: #f79d3a;
+  --color-coparent-500: #e08a3c;
+  --color-coparent-600: #c46e1f;
+  --color-coparent-700: #a3561a;
+  --color-coparent-800: #84451c;
+  --color-coparent-900: #6d3a1a;
+
+  /* Restorative Justice — Purple #A05DFE */
+  --color-rj-50: #f6f2ff;
+  --color-rj-100: #ede8ff;
+  --color-rj-200: #ddd3ff;
+  --color-rj-300: #c4afff;
+  --color-rj-400: #a05dfe;
+  --color-rj-500: #8e45eb;
+  --color-rj-600: #7c30d9;
+  --color-rj-700: #6924b6;
+  --color-rj-800: #572095;
+  --color-rj-900: #491d7a;
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -63,4 +111,39 @@
   :root {
     --radius: 0.5rem;
   }
+}
+
+/* ── Decorative animations ── */
+.sparkle-float {
+  animation: sparkle-bob 3s ease-in-out infinite;
+}
+.sparkle-float-delay {
+  animation: sparkle-bob 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes sparkle-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(15deg); }
+}
+
+.hero-stamp {
+  animation: stamp-settle 0.6s ease-out both;
+  animation-delay: 0.8s;
+  transform: rotate(-8deg);
+}
+
+@keyframes stamp-settle {
+  0% { transform: rotate(-20deg) scale(0.8); opacity: 0; }
+  60% { transform: rotate(2deg) scale(1.05); opacity: 1; }
+  100% { transform: rotate(-8deg) scale(1); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }

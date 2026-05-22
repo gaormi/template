@@ -10,6 +10,8 @@ const fira = Fira_Code({
 
 import "~/app/globals.css";
 import { Providers } from "~/app/providers";
+import Header from "~/components/layout/Header";
+import Footer from "~/components/layout/Footer";
 import {
   APP_NAME,
   APP_DESCRIPTION,
@@ -71,8 +73,10 @@ export default function RootLayout({
         className={`${inter.variable} ${fira.variable} font-sans`}
       >
         <Providers>
-          <div className="h-screen w-screen overflow-hidden bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 select-none">
-            {children}
+          <div className="min-h-screen flex flex-col bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
           </div>
         </Providers>
       </body>
