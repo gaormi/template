@@ -8,8 +8,7 @@ type SearchParams = Promise<{
   type?: string | string[];
 }>;
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=2200";
+const HERO_IMAGE = "/photos/mediation.jpg";
 const PROCESS_IMAGE =
   "https://images.unsplash.com/photo-1762341104168-63ddb56e9805?auto=format&fit=crop&q=80&w=1600";
 
@@ -107,8 +106,8 @@ export default async function MediationPage({
   const initialPath = getInitialPath(params.type);
 
   return (
-    <main className="bg-primary-50/45 text-slate-800">
-      <section className="relative flex min-h-[720px] items-center overflow-hidden pt-28 sm:pt-32 lg:min-h-[88vh]">
+    <main className="bg-white text-neutral-800">
+      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-0 lg:pb-0">
         <Image
           src={HERO_IMAGE}
           alt="Two people talking across a quiet table"
@@ -117,38 +116,39 @@ export default async function MediationPage({
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/92 via-slate-900/62 to-slate-900/12" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-primary-50 via-primary-50/55 to-transparent" />
+        <div className="absolute inset-0 bg-neutral-900/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/40 via-transparent to-primary-950/20" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/55 to-transparent" />
 
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
-            <div className="max-w-4xl">
+            <div className="mx-auto max-w-4xl text-center">
               <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-primary-100 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-primary-300" />
                 Conflict Resolution & Mediation Services
               </p>
-              <h1 className="mt-6 max-w-3xl text-5xl font-medium leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 text-[2.25rem] font-medium leading-[1.08] text-white sm:text-[4.25rem] sm:leading-[1.05] md:text-[5.125rem]">
                 Professional mediation for{" "}
                 <span className="font-serif italic text-primary-200">
                   private resolution
                 </span>
               </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/82">
+              <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/82 sm:text-xl">
                 Fairfield Center helps individuals, families, businesses, and
                 court-referred parties resolve conflict through a confidential,
                 neutral process focused on practical agreements.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                   href="#choose-path"
-                  className="inline-flex items-center justify-center rounded-full bg-primary-500 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary-950/20 transition-colors hover:bg-primary-600"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-primary-600 shadow-xl backdrop-blur-sm transition-all duration-300 hover:bg-primary-500/85 hover:text-white active:scale-[0.98]"
                 >
                   View Private Packages
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href="/services/mediation?type=court#choose-path"
-                  className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 active:scale-[0.98]"
                 >
                   Court-Referred Cases
                 </Link>
@@ -158,13 +158,13 @@ export default async function MediationPage({
         </Container>
       </section>
 
-      <section className="border-y border-primary-100 bg-white py-7">
+      <section className="border-y border-neutral-100 bg-white py-7">
         <Container>
-          <div className="flex flex-col items-center justify-center gap-5 text-center md:flex-row md:gap-12">
+          <div className="grid gap-5 text-center md:grid-cols-3">
             {trustItems.map((item) => (
               <p
                 key={item}
-                className="text-sm font-bold uppercase tracking-widest text-primary-500/70"
+                className="text-sm font-bold uppercase tracking-widest text-primary-500/75"
               >
                 {item}
               </p>
@@ -173,18 +173,29 @@ export default async function MediationPage({
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
-        <Container>
+      <section className="relative overflow-hidden py-10 sm:py-20">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-60"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            maskImage: "radial-gradient(circle at center, black, transparent 80%)",
+            WebkitMaskImage:
+              "radial-gradient(circle at center, black, transparent 80%)",
+          }}
+        />
+        <Container className="relative z-10">
           <AnimateIn animation="fade-up">
-            <div className="mx-auto max-w-5xl text-center">
+            <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-16">
               <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 What Mediation Does
               </p>
-              <h2 className="mt-5 text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                 A trained, neutral mediator helps people talk through conflict,
                 identify issues, and create agreements that are{" "}
-                <span className="font-serif italic text-primary-600">
+                <span className="font-semibold text-primary-500">
                   clear enough to use
                 </span>
                 .
@@ -192,22 +203,22 @@ export default async function MediationPage({
             </div>
           </AnimateIn>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
             {valueCards.map((item, index) => (
               <AnimateIn
                 key={item.title}
                 animation="fade-up"
-                delay={index * 90}
+                delay={index * 100}
                 className="flex"
               >
-                <div className="flex flex-1 flex-col rounded-[2rem] border border-primary-100 bg-white p-7 shadow-sm">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-600">
+                <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60 sm:p-8">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-600 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
                     <CheckIcon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-neutral-900">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
                     {item.text}
                   </p>
                 </div>
@@ -219,111 +230,90 @@ export default async function MediationPage({
 
       <MediationPathExplorer initialPath={initialPath} />
 
-      <section id="how-it-works" className="bg-white py-20 sm:py-24">
+      <section id="how-it-works" className="bg-white py-10 sm:py-20">
         <Container>
-          <div className="mb-12">
-            <div>
+          <AnimateIn animation="fade-up">
+            <div className="mb-10 max-w-4xl sm:mb-16">
               <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 The Process
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
+              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                 The 5-step{" "}
-                <span className="font-serif italic text-primary-600">
+                <span className="font-semibold text-primary-500">
                   journey
                 </span>
               </h2>
+              <p className="mt-5 max-w-3xl text-lg leading-relaxed text-neutral-500 sm:text-xl">
+                A structured workflow designed for clarity, safety, and practical
+                decision-making. Sessions may be held in person or by video
+                conference.
+              </p>
             </div>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500">
-              A structured workflow designed for clarity, safety, and practical
-              decision-making. Sessions may be held in person or by video
-              conference.
-            </p>
-          </div>
+          </AnimateIn>
 
-          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-            <div className="relative min-h-[420px] overflow-hidden rounded-[2.5rem] shadow-xl">
+          <AnimateIn animation="fade-up">
+            <div className="relative min-h-[340px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
               <Image
                 src={PROCESS_IMAGE}
                 alt="A person taking notes on a clipboard"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 48vw"
+                sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-900/25 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 max-w-md rounded-3xl bg-white/92 p-5 shadow-2xl backdrop-blur sm:bottom-8 sm:left-8 sm:p-6">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
                   Initial step
                 </p>
-                <p className="mt-1 text-lg font-bold text-slate-900">
+                <p className="mt-1 text-lg font-bold text-neutral-900">
                   Intake, safety screening, and orientation
                 </p>
               </div>
             </div>
+          </AnimateIn>
 
-            <div className="relative">
-              <div className="grid gap-4">
-                {journey.map((item, index) => {
-                  const Icon = item.icon;
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {journey.map((item, index) => {
+              const Icon = item.icon;
 
-                  return (
-                    <div
-                      key={item.step}
-                      className={`group relative grid gap-4 rounded-[2rem] border p-5 transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-lg sm:grid-cols-[4rem_1fr] ${item.card}`}
-                    >
-                      <div className={`flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm ring-1 transition-colors ${item.iconStyle}`}>
+              return (
+                <AnimateIn
+                  key={item.step}
+                  animation="fade-up"
+                  delay={index * 80}
+                  className="flex"
+                >
+                  <div
+                    className={`group flex flex-1 flex-col rounded-[2rem] border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-xl ${item.card}`}
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow-sm ring-1 transition-colors ${item.iconStyle}`}>
                         <Icon className="h-6 w-6" />
                       </div>
-                      <div>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className={`text-xs font-bold uppercase tracking-widest ${item.label}`}>
-                            Step {item.step}
-                          </span>
-                          {index === 0 && (
-                            <span className={`rounded-full px-3 py-1 text-xs font-bold ${item.badge}`}>
-                              Start here
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="mt-2 text-xl font-bold text-slate-900">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-slate-500">
-                          {item.text}
-                        </p>
-                      </div>
+                      <span className={`text-xs font-bold uppercase tracking-widest ${item.label}`}>
+                        Step {item.step}
+                      </span>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                    {index === 0 && (
+                      <span className={`mt-5 self-start rounded-full px-3 py-1 text-xs font-bold ${item.badge}`}>
+                        Start here
+                      </span>
+                    )}
+                    <h3 className="mt-4 text-xl font-bold text-slate-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                      {item.text}
+                    </p>
+                  </div>
+                </AnimateIn>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24">
-        <Container>
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
-              Make resolutions smarter, stronger, and{" "}
-              <span className="font-serif italic text-primary-600">
-                simpler
-              </span>
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-slate-500">
-              Contact Fairfield Center to schedule an intake or ask which
-              mediation path fits your case.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-primary-600 px-8 py-3.5 text-sm font-bold text-white transition-colors hover:bg-primary-700"
-            >
-              Start Your Process
-              <ArrowRightIcon className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </Container>
-      </section>
     </main>
   );
 }

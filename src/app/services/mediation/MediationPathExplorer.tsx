@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Container from "~/components/layout/Container";
+import AnimateIn from "~/components/ui/AnimateIn";
 
 export type MediationPath = "court" | "private";
 
@@ -195,25 +196,39 @@ export default function MediationPathExplorer({
   }
 
   return (
-    <section id="choose-path" className="py-20 sm:py-24">
-      <Container>
-        <div className="mb-12">
-          <div>
+    <section
+      id="choose-path"
+      className="relative overflow-hidden bg-primary-50/35 py-10 sm:py-20"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-70"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+          maskImage: "radial-gradient(circle at center, black, transparent 80%)",
+          WebkitMaskImage:
+            "radial-gradient(circle at center, black, transparent 80%)",
+        }}
+      />
+      <Container className="relative z-10">
+        <AnimateIn animation="fade-up">
+          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
             <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Choose Your Path
             </p>
-            <h2 className="mt-4 text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
               Start with the right{" "}
-              <span className="font-serif italic text-primary-600">
+              <span className="font-semibold text-primary-500">
                 mediation path
               </span>
             </h2>
           </div>
-        </div>
+        </AnimateIn>
 
-        <div className="rounded-[2.25rem] border border-primary-100 bg-white p-3 shadow-sm">
-          <div className="grid gap-3 lg:grid-cols-2">
+        <AnimateIn animation="fade-up" delay={100}>
+          <div className="grid gap-4 lg:grid-cols-2 lg:gap-6">
             <PathChoice
               active={activePath === "private"}
               eyebrow="Primary path"
@@ -231,15 +246,15 @@ export default function MediationPathExplorer({
               onClick={() => selectPath("court")}
             />
           </div>
-        </div>
+        </AnimateIn>
 
-        <div className="mt-12 rounded-[2.25rem] border border-primary-100 bg-white p-5 shadow-sm sm:p-8">
-          <div className="mb-8 flex flex-col gap-3 border-b border-primary-100 pb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 border-t border-primary-100/80 pt-8 sm:mt-14 sm:pt-10">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
                 Currently viewing
               </p>
-              <h3 className="mt-1 text-2xl font-bold text-slate-900">
+              <h3 className="mt-1 text-2xl font-bold text-neutral-900">
                 {activePath === "private"
                   ? "Private Mediation"
                   : "Court-Referred Mediation"}
@@ -247,7 +262,7 @@ export default function MediationPathExplorer({
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary-600 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary-700"
+              className="inline-flex items-center justify-center rounded-full bg-primary-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 active:scale-[0.98]"
             >
               Contact Intake
               <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -280,14 +295,14 @@ function PathChoice({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`group overflow-hidden rounded-[1.75rem] border-2 bg-white text-left transition-all duration-300 ${
+      className={`group overflow-hidden rounded-[2rem] border bg-white text-left shadow-sm transition-all duration-500 hover:-translate-y-1 sm:rounded-[2.5rem] ${
         active
           ? "border-primary-500 shadow-xl shadow-primary-200/70"
-          : "border-transparent hover:border-primary-200 hover:bg-primary-50/40"
+          : "border-white hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
       }`}
     >
-      <div className="grid min-h-full sm:grid-cols-[0.42fr_0.58fr]">
-        <div className="relative min-h-56 overflow-hidden sm:min-h-full">
+      <div className="grid min-h-full sm:grid-cols-[0.45fr_0.55fr]">
+        <div className="relative min-h-56 overflow-hidden bg-neutral-200 sm:min-h-full">
           <Image
             src={image}
             alt=""
@@ -295,9 +310,9 @@ function PathChoice({
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, 42vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/50 via-transparent to-transparent" />
         </div>
-        <div className="flex min-h-72 flex-col justify-between p-7">
+        <div className="flex min-h-72 flex-col justify-between p-6 sm:p-8">
           <div>
             <p
               className={`text-xs font-bold uppercase tracking-widest ${
@@ -309,7 +324,7 @@ function PathChoice({
             <h3 className="mt-3 text-2xl font-bold text-slate-900">
               {title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+            <p className="mt-3 text-sm leading-relaxed text-neutral-500">
               {text}
             </p>
           </div>
@@ -324,7 +339,7 @@ function PathChoice({
               {active ? "Showing now" : "Switch to this"}
             </span>
             <span
-              className={`flex h-11 w-11 items-center justify-center rounded-full ${
+              className={`flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${
                 active
                   ? "bg-primary-100 text-primary-700"
                   : "bg-slate-100 text-slate-500"
@@ -341,73 +356,78 @@ function PathChoice({
 
 function CourtContent() {
   return (
-    <div className="space-y-16">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-        <AccordionSection
+    <div className="space-y-10 sm:space-y-16">
+      <AnimateIn animation="fade-up">
+        <OverviewPanel
           eyebrow="Court-Referred Cases"
           title="What to expect when the court refers your case"
           description="The court may require a short orientation, but the decision to mediate is voluntary. If everyone chooses to continue, the mediator helps the parties discuss issues and write any agreement reached."
           items={courtTopics}
-        />
-        <VisualPanel
           image={COURT_VISUAL}
           label="Orientation"
-          title="10-15 minutes to understand the process"
-          text="Parties learn how mediation works, what confidentiality means, and whether the process fits their case."
+          visualTitle="10-15 minutes to understand the process"
+          visualText="Parties learn how mediation works, what confidentiality means, and whether the process fits their case."
         />
-      </div>
+      </AnimateIn>
 
       <div className="grid gap-5 md:grid-cols-3">
-        {courtDetails.map((item) => (
-          <DetailCard key={item.title} {...item} />
+        {courtDetails.map((item, index) => (
+          <AnimateIn
+            key={item.title}
+            animation="fade-up"
+            delay={index * 90}
+            className="flex"
+          >
+            <DetailCard {...item} />
+          </AnimateIn>
         ))}
       </div>
 
-      <div className="rounded-[2rem] bg-primary-700 p-7 text-white sm:p-10">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-primary-200">
-              Come Prepared
-            </p>
-            <h3 className="mt-3 text-3xl font-medium leading-tight">
-              Helpful topics to think through before mediation
-            </h3>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {[
-              "Children's best interests",
-              "Medical and educational decisions",
-              "Holiday and vacation schedules",
-              "Income, childcare, and healthcare costs",
-              "Property, debts, and support",
-              "Business, contracts, or money owed",
-            ].map((item) => (
-              <ChecklistItem key={item}>{item}</ChecklistItem>
-            ))}
+      <AnimateIn animation="fade-up">
+        <div className="rounded-[2.5rem] bg-primary-900 p-7 text-white shadow-xl shadow-primary-100/70 sm:p-10">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-200">
+                Come Prepared
+              </p>
+              <h3 className="mt-3 text-3xl font-medium leading-tight">
+                Helpful topics to think through before mediation
+              </h3>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                "Children's best interests",
+                "Medical and educational decisions",
+                "Holiday and vacation schedules",
+                "Income, childcare, and healthcare costs",
+                "Property, debts, and support",
+                "Business, contracts, or money owed",
+              ].map((item) => (
+                <ChecklistItem key={item}>{item}</ChecklistItem>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </AnimateIn>
     </div>
   );
 }
 
 function PrivateContent() {
   return (
-    <div className="space-y-16">
-      <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-        <AccordionSection
+    <div className="space-y-10 sm:space-y-16">
+      <AnimateIn animation="fade-up">
+        <OverviewPanel
           eyebrow="Private Mediation"
           title="A start-to-finish package for direct mediation requests"
           description="Private mediation is for people who want to begin outside a court referral. Packages include intake, screening, mediation time, documentation, revisions, and signing support."
           items={privateTopics}
-        />
-        <VisualPanel
           image={PRIVATE_VISUAL}
           label="Package Includes"
-          title="Up to 3 hours of direct mediation"
-          text="Most packages are structured as one primary session and one follow-up, with additional time available for complex cases."
+          visualTitle="Up to 3 hours of direct mediation"
+          visualText="Most packages are structured as one primary session and one follow-up, with additional time available for complex cases."
         />
-      </div>
+      </AnimateIn>
 
       <div>
         <div className="mb-8">
@@ -416,34 +436,116 @@ function PrivateContent() {
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Fee Tiers
             </p>
-            <h3 className="mt-3 text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
+            <h3 className="mt-3 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
               Private service packages
             </h3>
           </div>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
             Prices are listed per person. If you need economic assistance,
             please call Fairfield Center to ask about available options.
           </p>
         </div>
 
         <div className="space-y-6">
-          {privatePricingGroups.map((group) => (
-            <PricingTierGroup key={group.tier} {...group} />
+          {privatePricingGroups.map((group, index) => (
+            <AnimateIn key={group.tier} animation="fade-up" delay={index * 100}>
+              <PricingTierGroup {...group} />
+            </AnimateIn>
           ))}
         </div>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {privateTerms.map((item) => (
-          <div
+        {privateTerms.map((item, index) => (
+          <AnimateIn
             key={item}
-            className="rounded-3xl border border-primary-100 bg-primary-50/55 p-6"
+            animation="fade-up"
+            delay={index * 80}
+            className="flex"
           >
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700">
+            <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700">
+                <CheckIcon className="h-5 w-5" />
+              </div>
+              <p className="text-sm font-semibold leading-relaxed text-neutral-700">
+                {item}
+              </p>
+            </div>
+          </AnimateIn>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function OverviewPanel({
+  eyebrow,
+  title,
+  description,
+  items,
+  image,
+  label,
+  visualTitle,
+  visualText,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  items: AccordionItem[];
+  image: string;
+  label: string;
+  visualTitle: string;
+  visualText: string;
+}) {
+  return (
+    <div>
+      <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+        <span className="h-2 w-2 rounded-full bg-primary-500" />
+        {eyebrow}
+      </p>
+      <h3 className="mt-4 max-w-4xl text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+        {title}
+      </h3>
+      <p className="mt-5 max-w-5xl text-lg leading-relaxed text-neutral-500">
+        {description}
+      </p>
+
+      <div className="mt-9 grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
+        <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] shadow-xl shadow-neutral-200/60 lg:row-span-2 lg:min-h-0">
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-900/20 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+              {label}
+            </p>
+            <h4 className="mt-3 text-2xl font-bold leading-tight">
+              {visualTitle}
+            </h4>
+            <p className="mt-3 text-sm leading-relaxed text-white/82">
+              {visualText}
+            </p>
+          </div>
+        </div>
+
+        {items.map((item) => (
+          <div
+            key={item.title}
+            className="group flex min-h-48 flex-col rounded-[2rem] border border-primary-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60"
+          >
+            <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
               <CheckIcon className="h-5 w-5" />
             </div>
-            <p className="text-sm font-semibold leading-relaxed text-slate-700">
-              {item}
+            <h4 className="text-lg font-bold leading-snug text-neutral-900">
+              {item.title}
+            </h4>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+              {item.content}
             </p>
           </div>
         ))}
@@ -452,129 +554,14 @@ function PrivateContent() {
   );
 }
 
-function AccordionSection({
-  eyebrow,
-  title,
-  description,
-  items,
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-  items: AccordionItem[];
-}) {
-  const [openIndex, setOpenIndex] = useState(0);
-
-  return (
-    <div>
-      <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
-        <span className="h-2 w-2 rounded-full bg-primary-500" />
-        {eyebrow}
-      </p>
-      <h3 className="mt-4 text-4xl font-normal tracking-tight text-slate-900 sm:text-5xl">
-        {title}
-      </h3>
-      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-500">
-        {description}
-      </p>
-
-      <div className="mt-9 space-y-4">
-        {items.map((item, index) => {
-          const open = openIndex === index;
-
-          return (
-            <div
-              key={item.title}
-              className={`overflow-hidden rounded-3xl border transition-all duration-300 ${
-                open
-                  ? "border-primary-100 bg-white shadow-lg shadow-primary-100/70"
-                  : "border-primary-100 bg-primary-50/35"
-              }`}
-            >
-              <button
-                type="button"
-                onClick={() => setOpenIndex(open ? -1 : index)}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-              >
-                <span className="flex items-center gap-4">
-                  <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${
-                      open ? "bg-primary-600" : "bg-primary-100"
-                    }`}
-                  >
-                    {open ? (
-                      <CheckIcon className="h-4 w-4 text-white" />
-                    ) : (
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
-                    )}
-                  </span>
-                  <span
-                    className={`font-bold ${
-                      open ? "text-lg text-slate-900" : "text-slate-600"
-                    }`}
-                  >
-                    {item.title}
-                  </span>
-                </span>
-                {open ? (
-                  <MinusIcon className="h-5 w-5 shrink-0 text-primary-500" />
-                ) : (
-                  <PlusIcon className="h-5 w-5 shrink-0 text-primary-500" />
-                )}
-              </button>
-              {open && (
-                <div className="px-6 pb-6 pl-[4.5rem] text-sm leading-relaxed text-slate-500">
-                  {item.content}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-function VisualPanel({
-  image,
-  label,
-  title,
-  text,
-}: {
-  image: string;
-  label: string;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div className="relative min-h-[520px] overflow-hidden rounded-[2.5rem] shadow-xl">
-      <Image
-        src={image}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 100vw, 48vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-950/70 via-primary-900/10 to-transparent" />
-      <div className="absolute bottom-7 left-7 right-7 rounded-3xl bg-white/90 p-6 shadow-2xl backdrop-blur">
-        <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
-          {label}
-        </p>
-        <h3 className="mt-2 text-2xl font-bold text-slate-900">{title}</h3>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600">{text}</p>
-      </div>
-    </div>
-  );
-}
-
 function DetailCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[2rem] border border-primary-100 bg-primary-50/55 p-7">
-      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white">
+    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60">
+      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-700 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
         <ShieldIcon className="h-5 w-5" />
       </div>
-      <h3 className="text-xl font-bold text-slate-900">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-slate-500">{text}</p>
+      <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-neutral-500">{text}</p>
     </div>
   );
 }
@@ -625,17 +612,17 @@ function PricingTierGroup({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-[2.5rem] border p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl sm:p-8 ${theme.card} ${theme.shadow}`}
+      className={`relative overflow-hidden rounded-[2rem] border p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl sm:rounded-[2.5rem] sm:p-8 ${theme.card} ${theme.shadow}`}
     >
       <div className="mb-6">
         <div className="mb-4 inline-flex items-center rounded-full bg-white/80 px-3.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm backdrop-blur-md">
           <span className={`mr-2 h-2.5 w-2.5 rounded-full ${theme.dot}`} />
           {subtitle}
         </div>
-        <h3 className="text-3xl font-bold leading-tight tracking-tight text-slate-900">
+        <h3 className="text-3xl font-bold leading-tight tracking-tight text-neutral-900">
           {title}
         </h3>
-        <p className="mt-2 text-[15px] font-medium leading-relaxed text-slate-600">
+        <p className="mt-2 text-[15px] font-medium leading-relaxed text-neutral-600">
           {summary}
         </p>
       </div>
@@ -646,24 +633,24 @@ function PricingTierGroup({
         }`}
       >
         {options.map((option) => (
-          <div key={option.label} className="flex flex-col rounded-3xl bg-white/75 p-5 shadow-sm">
+          <div key={option.label} className="flex flex-col rounded-[1.75rem] bg-white/80 p-5 shadow-sm backdrop-blur">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className={`text-xs font-bold uppercase tracking-widest ${theme.label}`}>
                   {option.label}
                 </p>
-                <h4 className="mt-1 text-xl font-bold text-slate-900">
+                <h4 className="mt-1 text-xl font-bold text-neutral-900">
                   {option.title}
                 </h4>
               </div>
-              <p className="shrink-0 text-slate-900">
+              <p className="shrink-0 text-neutral-900">
                 <span className="text-4xl font-bold">{option.price}</span>
-                <span className="ml-1 text-sm font-semibold text-slate-500">
+                <span className="ml-1 text-sm font-semibold text-neutral-500">
                   /pp
                 </span>
               </p>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-500">
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500">
               {option.text}
             </p>
           </div>
@@ -671,7 +658,7 @@ function PricingTierGroup({
 
         <Link
           href="/contact"
-          className={`inline-flex items-center justify-self-start text-sm font-bold ${theme.label} md:col-span-2`}
+          className={`inline-flex items-center justify-self-start text-sm font-bold ${theme.label} ${options.length > 1 ? "md:col-span-2" : ""}`}
         >
           Start intake
           <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -683,7 +670,7 @@ function PricingTierGroup({
 
 function ChecklistItem({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-12 items-center gap-3 rounded-full bg-white/12 px-4 py-3 text-sm font-semibold text-white">
+    <div className="flex min-h-12 items-center gap-3 rounded-2xl bg-white/12 px-4 py-3 text-sm font-semibold text-white">
       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-primary-700">
         <CheckIcon className="h-3.5 w-3.5" />
       </span>
@@ -741,42 +728,6 @@ function ShieldIcon({ className }: { className?: string }) {
         strokeLinejoin="round"
         strokeWidth={1.8}
         d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-      />
-    </svg>
-  );
-}
-
-function PlusIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M12 5v14m7-7H5"
-      />
-    </svg>
-  );
-}
-
-function MinusIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M5 12h14"
       />
     </svg>
   );

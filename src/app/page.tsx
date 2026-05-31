@@ -231,7 +231,7 @@ export default function Home() {
                   {/* Community image */}
                   <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl">
                     <Image
-                      src="/photos/community.jpg"
+                      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1200"
                       alt="Diverse community members smiling together"
                       fill
                       className="object-cover"
@@ -574,7 +574,7 @@ export default function Home() {
                   <div className="mt-6 flex-1">
                     <div className="relative h-full min-h-[220px] overflow-hidden rounded-2xl">
                       <Image
-                        src="/photos/mediation.jpg"
+                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=1200"
                         alt="Parents in a supportive co-parenting conversation"
                         fill
                         className="object-cover object-[30%_center]"
@@ -719,7 +719,7 @@ export default function Home() {
       <section className="relative isolate overflow-hidden py-14 sm:py-20">
         {/* Background image with overlay */}
         <Image
-          src="/photos/mediation.jpg"
+          src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=1600"
           alt=""
           fill
           className="object-cover"
