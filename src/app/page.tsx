@@ -69,7 +69,7 @@ export default function Home() {
          ══════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-primary-50/50 to-training-50/30 pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-28">
         {/* Subtle background dots */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #2984D1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, var(--color-primary-500) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
 
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -110,7 +110,7 @@ export default function Home() {
 
               <AnimateIn animation="fade-up" delay={300}>
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <Button href="/services" size="lg" className="rounded-full bg-primary-500 hover:bg-primary-600 shadow-lg shadow-primary-500/25">
+                  <Button href="#core-programs" size="lg" className="rounded-full bg-primary-500 hover:bg-primary-600 shadow-lg shadow-primary-500/25">
                     Explore Our Programs
                     <ArrowRightIcon className="h-4 w-4" />
                   </Button>
@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="relative flex items-start gap-4">
                   {/* Photo A — Main (larger): TL rounded, TR square, BL rounded, BR rounded */}
                   <div className="relative w-[58%] shrink-0">
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl rounded-tr-lg shadow-xl">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
                       <Image
                         src="/photos/hero-main.jpg"
                         alt="People enjoying a sunny day together in a community park"
@@ -144,9 +144,9 @@ export default function Home() {
                     <div className="absolute -bottom-5 -right-5 z-20 sm:-bottom-6 sm:-right-6">
                       <div className="hero-stamp relative flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full border-[3px] border-dashed border-primary-400/60 bg-white shadow-lg sm:h-[5.5rem] sm:w-[5.5rem]">
                         <div className="text-center">
-                          <p className="text-[9px] font-bold uppercase leading-tight tracking-wider text-primary-600 sm:text-[10px]">Since</p>
+                          <p className="text-[10px] font-bold uppercase leading-tight text-primary-600 sm:text-[11px]">Since</p>
                           <p className="text-base font-extrabold leading-none text-primary-700 sm:text-lg">1982</p>
-                          <p className="text-[7px] font-semibold uppercase tracking-wide text-primary-500 sm:text-[8px]">40+ Years</p>
+                          <p className="text-[8px] font-semibold uppercase text-primary-500 sm:text-[9px]">40+ Years</p>
                         </div>
                       </div>
                     </div>
@@ -154,7 +154,7 @@ export default function Home() {
 
                   {/* Photo B — Secondary: TR rounded, BR rounded, TL square, BL square */}
                   <div className="relative w-[42%]">
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-3xl rounded-tl-lg rounded-bl-lg shadow-xl">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
                       <Image
                         src="/photos/hero-hands.jpg"
                         alt="Two people shaking hands, symbolizing agreement and peace"
@@ -216,7 +216,7 @@ export default function Home() {
                 <Sparkle className="sparkle-float absolute -bottom-4 right-8 h-5 w-5 text-primary-400" />
 
                 {/* Vision quote card */}
-                <div className="relative overflow-hidden rounded-3xl border border-primary-200/50 bg-gradient-to-br from-primary-50 to-training-50 p-8 shadow-lg dark:border-primary-800/30 dark:from-primary-900/30 dark:to-training-900/20">
+                <div className="relative overflow-hidden rounded-lg border border-primary-200/50 bg-gradient-to-br from-primary-50 to-training-50 p-8 shadow-lg dark:border-primary-800/30 dark:from-primary-900/30 dark:to-training-900/20">
                   <div className="relative">
                     <blockquote className="text-lg italic leading-relaxed text-neutral-700 dark:text-neutral-300">
                       &ldquo;A community where conflict is handled with dignity,
@@ -245,10 +245,10 @@ export default function Home() {
             {/* Right — Text (swapped side from hero) */}
             <AnimateIn animation="fade-left" delay={150}>
               <div>
-                <p className="text-sm font-bold uppercase tracking-widest text-primary-500">
+                <p className="text-sm font-bold uppercase text-primary-500">
                   Our Mission & Legacy
                 </p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+                <h2 className="mt-3 text-3xl font-extrabold text-neutral-900 sm:text-4xl dark:text-neutral-100">
                   Restoring relationships for over four decades
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -269,7 +269,7 @@ export default function Home() {
                     { value: "500+", label: "Cases Annually" },
                   ].map((stat) => (
                     <div key={stat.label}>
-              <p className="text-3xl font-extrabold tracking-tight text-primary-500 sm:text-4xl">
+              <p className="text-3xl font-extrabold text-primary-500 sm:text-4xl">
                         {stat.value}
                       </p>
                       <p className="mt-1 text-sm font-medium text-neutral-500 dark:text-neutral-400">
@@ -287,14 +287,14 @@ export default function Home() {
       {/* ══════════════════════════════════════════════
           CORE PROGRAMS — colorful cards
          ══════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-20">
+      <section id="core-programs" className="py-14 sm:py-20">
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-primary-500">
+              <p className="text-sm font-bold uppercase text-primary-500">
                 What We Do
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+              <h2 className="mt-3 text-3xl font-extrabold text-neutral-900 sm:text-4xl dark:text-neutral-100">
                 Core Programs
               </h2>
               <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
@@ -476,7 +476,7 @@ export default function Home() {
                     <AcademicIcon className="mx-auto h-6 w-6 text-training-500" />
                     <p className="mt-1 text-2xl font-extrabold leading-none text-neutral-900">4</p>
                     <p className="text-xs font-semibold text-neutral-900">Tracks</p>
-                    <p className="mt-0.5 text-[10px] text-neutral-500">Certification</p>
+                    <p className="mt-0.5 text-[11px] text-neutral-500">Certification</p>
                   </div>
                 </div>
               </div>
@@ -485,10 +485,10 @@ export default function Home() {
             {/* Right — Text */}
             <AnimateIn animation="fade-left" delay={150}>
               <div>
-                <p className="text-sm font-bold uppercase tracking-widest text-training-500">
+                <p className="text-sm font-bold uppercase text-training-500">
                   Training Programs
                 </p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+                <h2 className="mt-3 text-3xl font-extrabold text-neutral-900 sm:text-4xl dark:text-neutral-100">
                   Become a Certified Mediator
                 </h2>
                 <p className="mt-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -556,14 +556,14 @@ export default function Home() {
       <section className="py-14 sm:py-20">
         <Container>
           <AnimateIn animation="fade-up">
-            <div className="overflow-hidden rounded-3xl bg-coparent-50 p-6 sm:p-10 dark:bg-coparent-900/10">
+            <div className="overflow-hidden rounded-lg bg-coparent-50 p-6 sm:p-10 dark:bg-coparent-900/10">
               <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr]">
                 {/* Left — Title + Button + Photo */}
                 <div className="flex flex-col">
-                  <p className="text-sm font-bold uppercase tracking-widest text-coparent-500">
+                  <p className="text-sm font-bold uppercase text-coparent-500">
                     Co-Parenting Program
                   </p>
-                  <h2 className="mt-2 text-2xl font-extrabold tracking-tight text-neutral-900 sm:text-3xl dark:text-neutral-100">
+                  <h2 className="mt-2 text-2xl font-extrabold text-neutral-900 sm:text-3xl dark:text-neutral-100">
                     Meeting in the Middle
                   </h2>
                   <div className="mt-4">
@@ -634,10 +634,10 @@ export default function Home() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-primary-500">
+              <p className="text-sm font-bold uppercase text-primary-500">
                 Community Voices
               </p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+              <h2 className="mt-3 text-3xl font-extrabold text-neutral-900 sm:text-4xl dark:text-neutral-100">
                 Hear from Those We&apos;ve Served
               </h2>
             </div>
@@ -699,8 +699,8 @@ export default function Home() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-primary-500">FAQ</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-100">
+              <p className="text-sm font-bold uppercase text-primary-500">FAQ</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-neutral-900 sm:text-4xl dark:text-neutral-100">
                 Frequently Asked Questions
               </h2>
             </div>
@@ -726,10 +726,6 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-primary-900/80 backdrop-blur-sm" />
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-24 -right-24 h-[350px] w-[350px] rounded-full bg-training-400/15 blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 h-[350px] w-[350px] rounded-full bg-rj-400/15 blur-3xl" />
-        </div>
         <Container className="relative">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-2xl text-center">

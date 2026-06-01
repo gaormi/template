@@ -224,7 +224,7 @@ export default function RestorativeJusticePage() {
                   sizes="(max-width: 1024px) 100vw, 48vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-rj-900/70 via-rj-900/10 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
+                <div className="absolute bottom-6 left-6 right-6 rounded-lg bg-white/90 p-5 shadow-2xl backdrop-blur">
                   <p className="text-xs font-bold uppercase text-rj-500">
                     Values-based process
                   </p>

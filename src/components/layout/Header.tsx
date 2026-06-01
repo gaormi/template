@@ -77,10 +77,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <span className="relative h-9 w-9 overflow-hidden rounded-full bg-white/80">
-              <Image src="/logo.svg" alt="FairField Center" fill className="object-cover" />
+              <Image src="/logo.svg" alt="Fairfield Center" fill className="object-cover" />
             </span>
             <span className="text-base font-bold text-neutral-800 sm:text-lg lg:text-xl">
-              FairField Center
+              Fairfield Center
             </span>
           </Link>
 

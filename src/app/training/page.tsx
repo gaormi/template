@@ -801,7 +801,7 @@ export default function TrainingPage() {
 
             {/* Right — Application Forms */}
             <AnimateIn animation="fade-left" delay={150}>
-              <div className="rounded-3xl border border-neutral-100 bg-white p-4 shadow-xl shadow-neutral-200/50 sm:p-6 lg:p-8">
+              <div className="rounded-lg border border-neutral-100 bg-white p-4 shadow-xl shadow-neutral-200/50 sm:p-6 lg:p-8">
                 <div className="mb-5 sm:mb-6">
                   <h3 className="text-2xl font-normal text-neutral-900 sm:text-[1.7rem]">
                     Application{" "}

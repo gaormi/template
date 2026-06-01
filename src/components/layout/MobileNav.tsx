@@ -86,10 +86,10 @@ export default function MobileNav({
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="relative h-7 w-7 overflow-hidden rounded-full bg-white">
-              <Image src="/logo.svg" alt="FairField Center" fill className="object-cover" />
+              <Image src="/logo.svg" alt="Fairfield Center" fill className="object-cover" />
             </span>
             <span className="text-base font-bold text-neutral-900 dark:text-neutral-100">
-              FairField Center
+              Fairfield Center
             </span>
           </div>
           <button

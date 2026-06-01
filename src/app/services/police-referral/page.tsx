@@ -198,7 +198,7 @@ export default function PoliceReferralPage() {
                   sizes="(max-width: 1024px) 100vw, 48vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-prm-950/70 via-prm-900/10 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
+                <div className="absolute bottom-6 left-6 right-6 rounded-lg bg-white/90 p-5 shadow-2xl backdrop-blur">
                   <p className="text-xs font-bold uppercase text-police-700">
                     Free Resource
                   </p>
@@ -388,7 +388,7 @@ export default function PoliceReferralPage() {
                   sizes="(max-width: 1024px) 100vw, 48vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-prm-950/80 via-prm-950/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
+                <div className="absolute bottom-6 left-6 right-6 rounded-lg bg-white/90 p-5 shadow-2xl backdrop-blur">
                   <p className="text-xs font-bold uppercase text-police-700">
                     Key Partners
                   </p>
