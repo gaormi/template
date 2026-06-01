@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="grid gap-8 sm:grid-cols-3 lg:ml-auto lg:min-w-[600px] lg:max-w-[680px] lg:gap-10">
             {/* Services */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+              <h4 className="text-sm font-semibold uppercaser text-neutral-500 dark:text-neutral-400">
                 Services
               </h4>
               <ul className="mt-3 space-y-2">
@@ -47,7 +47,7 @@ export default function Footer() {
 
             {/* Training */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+              <h4 className="text-sm font-semibold uppercaser text-neutral-500 dark:text-neutral-400">
                 Training
               </h4>
               <ul className="mt-3 space-y-2">
@@ -71,7 +71,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+              <h4 className="text-sm font-semibold uppercaser text-neutral-500 dark:text-neutral-400">
                 Contact Info
               </h4>
               <ul className="mt-3 space-y-2 text-sm text-neutral-600 dark:text-neutral-400">

@@ -104,7 +104,7 @@ export default async function MediationPage({
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-[11px] font-bold uppercase leading-relaxed tracking-[0.12em] text-primary-100 backdrop-blur sm:text-sm sm:tracking-widest">
+              <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-[11px] font-bold uppercase leading-relaxed text-primary-100 backdrop-blur sm:text-sm">
                 <span className="h-2 w-2 rounded-full bg-primary-300" />
                 Conflict Resolution & Mediation Services
               </p>
@@ -154,11 +154,11 @@ export default async function MediationPage({
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-6xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 What Mediation Does
               </p>
-              <h2 className="mt-5 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+              <h2 className="mt-5 text-3xl font-normal text-neutral-900 sm:text-[2.75rem]">
                 A trained neutral mediator helps people{" "}
                 <span className="font-semibold text-primary-500">
                   clarify issues and reach practical agreements.
@@ -178,7 +178,7 @@ export default async function MediationPage({
                   delay={index * 100}
                   className="flex"
                 >
-                  <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/35 sm:p-8">
+                  <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200 transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50 sm:p-8">
                     <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-700">
                       <Icon className="h-5 w-5" />
                     </div>
@@ -202,11 +202,11 @@ export default async function MediationPage({
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mb-10 max-w-4xl sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 The Process
               </p>
-              <h2 className="mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+              <h2 className="mt-4 text-3xl font-normal text-neutral-900 sm:text-[2.75rem]">
                 The 5-step{" "}
                 <span className="font-semibold text-primary-500">
                   journey
@@ -231,7 +231,7 @@ export default async function MediationPage({
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-900/25 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 max-w-md text-white sm:bottom-8 sm:left-8">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+                <p className="text-xs font-bold uppercase text-primary-100">
                   Initial step
                 </p>
                 <p className="mt-2 text-2xl font-bold leading-tight">
@@ -251,13 +251,13 @@ export default async function MediationPage({
                   className="flex"
                 >
                   <div
-                    className={`flex flex-1 flex-col rounded-[2rem] border p-5 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30 ${item.card}`}
+                    className={`flex flex-1 flex-col rounded-[2rem] border p-5 shadow-sm shadow-neutral-200 transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50 ${item.card}`}
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-sm font-bold text-primary-700 ring-1 ring-primary-100">
                         {item.step}
                       </div>
-                      <span className={`text-xs font-bold uppercase tracking-widest ${item.label}`}>
+                      <span className={`text-xs font-bold uppercase ${item.label}`}>
                         {index === 0 ? "Start here" : `Step ${item.step}`}
                       </span>
                     </div>

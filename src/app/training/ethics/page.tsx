@@ -161,7 +161,7 @@ export default function EthicsTrainingPage() {
               const Icon = fact.icon;
               return (
                 <AnimateIn key={fact.label} animation="fade-up" delay={index * 70}>
-                  <div className="flex h-full flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm shadow-neutral-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-training-200 hover:bg-training-50/30 sm:p-7">
+                  <div className="flex h-full flex-col rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:border-training-200 hover:bg-training-50 sm:p-7">
                     <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-training-100 text-training-700">
                       <Icon className="h-6 w-6" />
                     </div>
@@ -230,7 +230,7 @@ export default function EthicsTrainingPage() {
                   {topics.map((topic) => (
                     <div
                       key={topic.title}
-                      className="rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm shadow-neutral-200/40"
+                      className="rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200"
                     >
                       <h3 className="text-lg font-semibold leading-7 text-neutral-950">
                         {topic.title}
@@ -277,7 +277,7 @@ export default function EthicsTrainingPage() {
                   href={session.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex h-full flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm shadow-neutral-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-training-200 hover:bg-training-50/35"
+                  className="group flex h-full flex-col rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:border-training-200 hover:bg-training-50"
                 >
                   <span className="text-xs font-bold uppercase text-training-600">
                     Register
@@ -299,7 +299,7 @@ export default function EthicsTrainingPage() {
         </Container>
       </section>
 
-      <section className="bg-training-50/45 py-10 sm:py-20">
+      <section className="bg-training-50 py-10 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr]">
             <AnimateIn animation="fade-right">
@@ -342,7 +342,7 @@ export default function EthicsTrainingPage() {
 
       <section className="bg-white py-12">
         <Container>
-          <div className="grid gap-6 rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-xl shadow-neutral-200/50 sm:rounded-[2.5rem] sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="grid gap-6 rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-xl shadow-neutral-200 sm:rounded-[2.5rem] sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase text-training-600">
                 Questions before registering?

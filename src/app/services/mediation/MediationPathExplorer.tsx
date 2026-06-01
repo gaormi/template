@@ -237,10 +237,10 @@ export default function MediationPathExplorer({
   return (
     <section
       id="choose-path"
-      className="relative overflow-hidden bg-primary-50/35 py-10 sm:py-20"
+      className="relative overflow-hidden bg-white py-10 sm:py-20"
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-70"
+        className="pointer-events-none absolute inset-0 opacity-55"
         style={{
           backgroundImage:
             "linear-gradient(to right, var(--color-layout-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-layout-grid) 1px, transparent 1px)",
@@ -253,11 +253,11 @@ export default function MediationPathExplorer({
       <Container className="relative z-10">
         <AnimateIn animation="fade-up">
           <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Choose Your Path
             </p>
-            <h2 className="mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+            <h2 className="mt-4 text-3xl font-normal text-neutral-900 sm:text-[2.75rem]">
               Start with the right{" "}
               <span className="font-semibold text-primary-500">
                 mediation path
@@ -327,7 +327,7 @@ function PathChoice({
       className={`group overflow-hidden rounded-[2rem] border bg-white text-left shadow-sm transition-colors duration-300 sm:rounded-[2.5rem] ${
         active
           ? "border-primary-500 shadow-md shadow-primary-100/70"
-          : "border-white hover:border-primary-200"
+          : "border-neutral-200 hover:border-primary-300 hover:bg-primary-50"
       }`}
     >
       <div className="grid min-h-full sm:grid-cols-[0.45fr_0.55fr]">
@@ -344,7 +344,7 @@ function PathChoice({
         <div className="flex min-h-72 flex-col justify-between p-6 sm:p-8">
           <div>
             <p
-              className={`text-xs font-bold uppercase tracking-widest ${
+              className={`text-xs font-bold uppercase ${
                 active ? "text-primary-600" : "text-slate-400"
               }`}
             >
@@ -362,7 +362,7 @@ function PathChoice({
               className={`rounded-full px-4 py-2 text-sm font-bold ${
                 active
                   ? "bg-primary-600 text-white"
-                  : "bg-primary-50 text-primary-600"
+                  : "bg-white text-primary-600 ring-1 ring-primary-100 group-hover:bg-primary-100"
               }`}
             >
               {active ? "Showing now" : "Switch to this"}
@@ -388,11 +388,11 @@ function CourtContent() {
     <div className="space-y-10 sm:space-y-16">
       <AnimateIn animation="fade-up">
         <div>
-          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
             <span className="h-2 w-2 rounded-full bg-primary-500" />
             Court-Referred Cases
           </p>
-          <h3 className="mt-4 max-w-4xl text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+          <h3 className="mt-4 max-w-4xl text-3xl font-normal text-neutral-900 sm:text-[2.75rem]">
             What to expect when the court refers your case
           </h3>
           <p className="mt-5 max-w-5xl text-lg leading-relaxed text-neutral-500">
@@ -454,7 +454,7 @@ function CourtTrackPanel({
   topics: AccordionItem[];
 }) {
   return (
-    <section className="h-full overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-sm">
+    <div className="h-full overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-sm">
       <div className="relative min-h-72 overflow-hidden bg-primary-950">
         <Image
           src={image}
@@ -465,7 +465,7 @@ function CourtTrackPanel({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-950/88 via-primary-900/34 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
-          <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+          <p className="text-xs font-bold uppercase text-primary-100">
             {eyebrow}
           </p>
           <h3 className="mt-3 text-3xl font-bold leading-tight">{title}</h3>
@@ -481,7 +481,7 @@ function CourtTrackPanel({
             key={topic.title}
             className="grid gap-4 py-5 first:pt-0 last:pb-0 sm:grid-cols-[3rem_1fr]"
           >
-            <p className="text-xs font-bold tracking-widest text-primary-500">
+            <p className="text-xs font-bold text-primary-500">
               {String(index + 1).padStart(2, "0")}
             </p>
             <div>
@@ -495,7 +495,7 @@ function CourtTrackPanel({
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -520,11 +520,11 @@ function PrivateContent() {
       <div>
         <div className="mb-8">
           <div>
-            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Fee Tiers
             </p>
-            <h3 className="mt-3 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+            <h3 className="mt-3 text-3xl font-normal text-neutral-900 sm:text-[2.75rem]">
               Private service packages
             </h3>
           </div>
@@ -547,11 +547,11 @@ function PrivateContent() {
         <div className="border-t border-neutral-200 pt-10">
           <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:gap-12">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 Private package terms
               </p>
-              <h3 className="mt-3 text-3xl font-normal leading-tight tracking-tight text-neutral-900">
+              <h3 className="mt-3 text-3xl font-normal leading-tight text-neutral-900">
                 Read before intake
               </h3>
             </div>
@@ -602,12 +602,12 @@ function OverviewPanel({
 }) {
   return (
     <div>
-      <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+      <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-primary-500">
         <span className="h-2 w-2 rounded-full bg-primary-500" />
         {eyebrow}
       </p>
       <h3
-        className={`mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem] ${
+        className={`mt-4 text-3xl font-normal text-neutral-900 sm:text-[2.75rem] ${
           titleSingleLine ? "max-w-none xl:whitespace-nowrap" : "max-w-4xl"
         }`}
       >
@@ -631,7 +631,7 @@ function OverviewPanel({
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-900/20 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+              <p className="text-xs font-bold uppercase text-primary-100">
                 {label}
               </p>
               <h4 className="mt-3 text-2xl font-bold leading-tight">
@@ -646,9 +646,9 @@ function OverviewPanel({
           {items.map((item, index) => (
             <div
               key={item.title}
-              className="flex min-h-48 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30"
+              className="flex min-h-48 flex-col rounded-[2rem] border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-200 transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50"
             >
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
+              <p className="text-xs font-bold uppercase text-primary-500">
                 Included {String(index + 1).padStart(2, "0")}
               </p>
               <h4 className="mt-5 text-lg font-bold leading-snug text-neutral-900">
@@ -690,7 +690,7 @@ function VisualOverviewLayout({
 
 function DetailCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30">
+    <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-200 bg-white p-7 shadow-sm shadow-neutral-200 transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50">
       <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-700">
         <ShieldIcon className="h-5 w-5" />
       </div>
@@ -723,7 +723,7 @@ function PricingTierGroup({
 }) {
   const theme = {
     primary: {
-      card: "border-primary-100 bg-primary-50/55",
+      card: "border-primary-200 bg-primary-50",
       dot: "bg-primary-500",
       label: "text-primary-600",
       divider: "border-primary-900/[0.08]",
@@ -768,11 +768,11 @@ function PricingTierGroup({
       className={`relative overflow-hidden rounded-[2rem] border p-6 shadow-sm sm:rounded-[2.5rem] sm:p-8 ${theme.card}`}
     >
       <div className="mb-6">
-        <div className="mb-4 inline-flex items-center rounded-full bg-white/80 px-3.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm backdrop-blur-md">
+        <div className="mb-4 inline-flex items-center rounded-full bg-white px-3.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm">
           <span className={`mr-2 h-2.5 w-2.5 rounded-full ${theme.dot}`} />
           {subtitle}
         </div>
-        <h3 className="text-3xl font-bold leading-tight tracking-tight text-neutral-900">
+        <h3 className="text-3xl font-bold leading-tight text-neutral-900">
           {title}
         </h3>
         <p className="mt-2 text-[15px] font-medium leading-relaxed text-neutral-600">
@@ -802,7 +802,7 @@ function PricingTierGroup({
               <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p
-                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest ${optionTheme.label}`}
+                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase ${optionTheme.label}`}
                   >
                     <span
                       className={`h-2 w-2 rounded-full ${optionTheme.dot}`}

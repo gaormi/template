@@ -123,7 +123,7 @@ export default function PoliceReferralPage() {
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-prm-100 backdrop-blur">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase text-prm-100 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-prm-300" />
                 October 2024 - October 2027
               </p>
@@ -155,7 +155,7 @@ export default function PoliceReferralPage() {
                   Program Details
                 </Link>
               </div>
-              <p className="mx-auto mt-8 max-w-2xl text-xs font-bold uppercase tracking-widest text-white/62">
+              <p className="mx-auto mt-8 max-w-2xl text-xs font-bold uppercase text-white/62">
                 Supported by Grant No. 15PBJA-24-GG-00236-BRND - Bureau of
                 Justice Assistance
               </p>
@@ -169,7 +169,7 @@ export default function PoliceReferralPage() {
           <div className="grid gap-5 text-center md:grid-cols-3">
             {quickFacts.map((fact) => (
               <div key={fact.label}>
-                <p className="text-sm font-bold uppercase tracking-widest text-prm-800/75">
+                <p className="text-sm font-bold uppercase text-prm-800/75">
                   {fact.label}
                 </p>
                 <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-neutral-500">
@@ -187,9 +187,9 @@ export default function PoliceReferralPage() {
       >
         <GridBackdrop />
         <Container className="relative z-10">
-          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <AnimateIn animation="fade-right">
-              <div className="relative min-h-[440px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+            <AnimateIn animation="fade-right" className="h-full">
+              <div className="relative h-full min-h-[440px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
                 <Image
                   src={OVERVIEW_IMAGE}
                   alt="Mediator speaking with a participant"
@@ -199,7 +199,7 @@ export default function PoliceReferralPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-prm-950/70 via-prm-900/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
-                  <p className="text-xs font-bold uppercase tracking-widest text-police-700">
+                  <p className="text-xs font-bold uppercase text-police-700">
                     Free Resource
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -209,13 +209,13 @@ export default function PoliceReferralPage() {
               </div>
             </AnimateIn>
 
-            <AnimateIn animation="fade-left" delay={120}>
-              <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+            <AnimateIn animation="fade-left" delay={120} className="h-full">
+              <div className="flex h-full flex-col justify-center">
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-800">
                   <span className="h-2 w-2 rounded-full bg-police-500" />
                   Program Overview
                 </p>
-                <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+                <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                   What is{" "}
                   <span className="font-semibold text-prm-800">
                     Police-Referred Mediation?
@@ -262,11 +262,11 @@ export default function PoliceReferralPage() {
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-800">
                 <span className="h-2 w-2 rounded-full bg-prm-700" />
                 How Mediation Helps
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Services &{" "}
                 <span className="font-semibold text-prm-800">Solutions</span>
               </h2>
@@ -293,7 +293,7 @@ export default function PoliceReferralPage() {
 
           <AnimateIn animation="fade-up" delay={160}>
             <div className="mt-10 rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm shadow-police-100/50 sm:p-8">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-800">
                 <span className="h-2 w-2 rounded-full bg-police-500" />
                 Common Referrals
               </p>
@@ -320,11 +320,11 @@ export default function PoliceReferralPage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-800">
                 <span className="h-2 w-2 rounded-full bg-prm-700" />
                 Program Goals
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 A practical path for officers and{" "}
                 <span className="font-semibold text-prm-800">
                   community members
@@ -352,11 +352,11 @@ export default function PoliceReferralPage() {
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
             <AnimateIn animation="fade-right">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-100">
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-100">
                   <span className="h-2 w-2 rounded-full bg-prm-300" />
                   Statewide Initiative
                 </p>
-                <h2 className="mt-4 text-4xl font-normal tracking-tight text-white sm:text-[3.45rem]">
+                <h2 className="mt-4 text-4xl font-normal text-white sm:text-[3.45rem]">
                   Pilot Project Background
                 </h2>
                 <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/75">
@@ -389,7 +389,7 @@ export default function PoliceReferralPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-prm-950/80 via-prm-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
-                  <p className="text-xs font-bold uppercase tracking-widest text-police-700">
+                  <p className="text-xs font-bold uppercase text-police-700">
                     Key Partners
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
@@ -414,7 +414,7 @@ export default function PoliceReferralPage() {
                 provides a less adversarial, less formal, and more empowering
                 way to resolve conflicts."
               </p>
-              <p className="mt-6 text-sm font-bold uppercase tracking-widest text-prm-100">
+              <p className="mt-6 text-sm font-bold uppercase text-prm-100">
                 Christine Poulson Executive Director, Resolution Virginia
               </p>
             </blockquote>
@@ -436,11 +436,11 @@ export default function PoliceReferralPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-prm-950/70 via-prm-950/10 to-transparent" />
             </div>
             <div className="p-8 sm:p-10 lg:p-12">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-prm-800">
                 <span className="h-2 w-2 rounded-full bg-police-500" />
                 How Officers Can Refer a Case
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Download and complete the{" "}
                 <span className="font-semibold text-prm-800">
                   fillable PDF referral form
@@ -453,7 +453,7 @@ export default function PoliceReferralPage() {
                   href="mailto:prm@fairfieldcetner.org"
                   className="rounded-2xl border border-police-100 bg-neutral-50 p-5 transition-colors hover:border-police-300"
                 >
-                  <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                  <p className="text-xs font-bold uppercase text-neutral-400">
                     Email
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -464,7 +464,7 @@ export default function PoliceReferralPage() {
                   href="tel:+15404537560"
                   className="rounded-2xl border border-police-100 bg-neutral-50 p-5 transition-colors hover:border-police-300"
                 >
-                  <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                  <p className="text-xs font-bold uppercase text-neutral-400">
                     Phone
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -492,7 +492,7 @@ export default function PoliceReferralPage() {
               </div>
 
               <div className="mt-10 rounded-[2rem] border border-neutral-100 bg-neutral-50 p-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-neutral-500">
+                <p className="text-xs font-bold uppercase text-neutral-500">
                   About Our Funding
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-500">
@@ -585,7 +585,7 @@ function ServiceCard({
 function GoalCard({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="h-full rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-police-100/60 sm:p-8">
-      <p className="text-xs font-bold uppercase tracking-widest text-prm-800">
+      <p className="text-xs font-bold uppercase text-prm-800">
         {title}
       </p>
       <ul className="mt-6 space-y-4">

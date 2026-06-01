@@ -171,7 +171,7 @@ export default function RestorativeJusticePage() {
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-rj-100 backdrop-blur">
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase text-rj-100 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-rj-300" />
                 Restorative Justice
               </p>
@@ -213,9 +213,9 @@ export default function RestorativeJusticePage() {
           }}
         />
         <Container className="relative z-10">
-          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-            <AnimateIn animation="fade-right">
-              <div className="relative min-h-[440px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
+            <AnimateIn animation="fade-right" className="h-full">
+              <div className="relative h-full min-h-[440px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
                 <Image
                   src={PHILOSOPHY_IMAGE}
                   alt="Community members speaking together around a table"
@@ -225,7 +225,7 @@ export default function RestorativeJusticePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-rj-900/70 via-rj-900/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
-                  <p className="text-xs font-bold uppercase tracking-widest text-rj-500">
+                  <p className="text-xs font-bold uppercase text-rj-500">
                     Values-based process
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -235,13 +235,13 @@ export default function RestorativeJusticePage() {
               </div>
             </AnimateIn>
 
-            <AnimateIn animation="fade-left" delay={120}>
-              <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+            <AnimateIn animation="fade-left" delay={120} className="h-full">
+              <div className="flex h-full flex-col justify-center">
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                   <span className="h-2 w-2 rounded-full bg-rj-500" />
                   Our Philosophy
                 </p>
-                <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+                <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                   Justice that focuses on{" "}
                   <span className="font-semibold text-rj-500">people</span>,
                   not punishment
@@ -286,7 +286,7 @@ export default function RestorativeJusticePage() {
                 in order to heal and put things as right as possible.&quot;
               </p>
               <div className="mx-auto mt-9 h-px max-w-md bg-rj-200" />
-              <p className="mt-6 text-base font-normal tracking-wide text-rj-500">
+              <p className="mt-6 text-base font-normal text-rj-500">
                 - Howard Zehr,{" "}
                 <span className="font-serif italic">
                   The Little Book of Restorative Justice
@@ -316,11 +316,11 @@ export default function RestorativeJusticePage() {
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                 <span className="h-2 w-2 rounded-full bg-rj-500" />
                 What We Do
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Our Programs & Services
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
@@ -350,11 +350,11 @@ export default function RestorativeJusticePage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                 <span className="h-2 w-2 rounded-full bg-rj-500" />
                 The Process
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 How restorative community{" "}
                 <span className="font-semibold text-rj-500">
                   conferencing
@@ -387,11 +387,11 @@ export default function RestorativeJusticePage() {
         <Container>
           <AnimateIn animation="fade-up" className="relative">
             <div className="mb-10 sm:mb-12">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-100">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-100">
                 <span className="h-2 w-2 rounded-full bg-rj-300" />
                 Why It Matters
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-white sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-white sm:text-[3.45rem]">
                 Benefits of Restorative Justice
               </h2>
             </div>
@@ -406,7 +406,7 @@ export default function RestorativeJusticePage() {
               >
                 <div className="h-full rounded-[2rem] border border-white/10 bg-white/[0.06] p-8 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.1] hover:shadow-xl hover:shadow-rj-900/20">
                   <h3 className="text-2xl font-bold leading-tight text-white">
-                    <span className="mb-1 block font-sans text-xs font-semibold uppercase tracking-[0.2em] text-rj-100">
+                    <span className="mb-1 block font-sans text-xs font-semibold uppercase text-rj-100">
                       For the
                     </span>
                     {group.title.replace("For the ", "")}
@@ -436,11 +436,11 @@ export default function RestorativeJusticePage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-12">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                 <span className="h-2 w-2 rounded-full bg-rj-500" />
                 Participant Reflections
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 What people remember after the{" "}
                 <span className="font-semibold text-rj-500">process</span>
               </h2>
@@ -462,7 +462,7 @@ export default function RestorativeJusticePage() {
                   <p className="mt-1 flex-1 text-sm leading-relaxed text-neutral-600">
                     {quote}
                   </p>
-                  <p className="mt-5 text-xs font-bold uppercase tracking-widest text-rj-500">
+                  <p className="mt-5 text-xs font-bold uppercase text-rj-500">
                     Workshop Participant
                   </p>
                 </blockquote>
@@ -477,11 +477,11 @@ export default function RestorativeJusticePage() {
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
             <AnimateIn animation="fade-right">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                   <span className="h-2 w-2 rounded-full bg-rj-500" />
                   Our Partners
                 </p>
-                <h2 className="mt-4 max-w-xl text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+                <h2 className="mt-4 max-w-xl text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                   Case Referral Sources
                 </h2>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-neutral-500">
@@ -522,11 +522,11 @@ export default function RestorativeJusticePage() {
               <div className="absolute inset-0 bg-gradient-to-t from-rj-900/60 via-rj-900/5 to-transparent" />
             </div>
             <div className="p-8 sm:p-10 lg:p-12">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-rj-500">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase text-rj-500">
                 <span className="h-2 w-2 rounded-full bg-rj-500" />
                 Contact
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Ready to explore restorative{" "}
                 <span className="font-semibold text-rj-500">justice?</span>
               </h2>
@@ -541,7 +541,7 @@ export default function RestorativeJusticePage() {
                   href="tel:+15405345686"
                   className="rounded-2xl border border-rj-100 bg-rj-50/45 p-5 transition-colors hover:border-rj-300"
                 >
-                  <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                  <p className="text-xs font-bold uppercase text-neutral-400">
                     Phone
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -552,7 +552,7 @@ export default function RestorativeJusticePage() {
                   href="mailto:rji@fairfieldcenter.org"
                   className="rounded-2xl border border-rj-100 bg-rj-50/45 p-5 transition-colors hover:border-rj-300"
                 >
-                  <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                  <p className="text-xs font-bold uppercase text-neutral-400">
                     Email
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">

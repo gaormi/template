@@ -86,7 +86,7 @@ export default function StepAccordion({
                   transitionDelay: isActive ? "0.4s" : "0s",
                 }}
               >
-                <span className="mb-3 inline-block w-fit rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white/70 backdrop-blur-sm">
+                <span className="mb-3 inline-block w-fit rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase text-white/70 backdrop-blur-sm">
                   {label} {step.num}
                 </span>
                 <h3 className="text-lg font-bold text-white sm:text-[1.45rem]">
@@ -103,7 +103,7 @@ export default function StepAccordion({
                 style={{ opacity: isActive ? 0 : 1 }}
               >
                 <span
-                  className="text-base font-bold tracking-[0.2em] text-white/90 uppercase"
+                  className="text-base font-bold text-white/90 uppercase"
                   style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
                 >
                   {step.title}

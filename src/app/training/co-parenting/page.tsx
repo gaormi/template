@@ -156,8 +156,8 @@ function CheckIcon({ className = "h-4 w-4" }: { className?: string }) {
 
 export default function CoParentingPage() {
   return (
-    <main className="overflow-hidden bg-[#f5f8ee] text-neutral-950 dark:bg-neutral-950 dark:text-white">
-      <section className="relative border-b border-training-200/70 bg-[#f5f8ee] pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pb-20 dark:border-white/10 dark:bg-neutral-950">
+    <main className="overflow-hidden bg-coparent-surface text-neutral-950 dark:bg-neutral-950 dark:text-white">
+      <section className="relative border-b border-training-200/70 bg-coparent-surface pb-14 pt-32 sm:pb-16 sm:pt-36 lg:pb-20 dark:border-white/10 dark:bg-neutral-950">
         <div className="absolute inset-0">
           <Image
             src={HERO_IMAGE}
@@ -168,7 +168,7 @@ export default function CoParentingPage() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/88 via-neutral-950/58 to-neutral-950/20" />
-          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#f5f8ee] via-[#f5f8ee]/86 to-transparent dark:from-neutral-950 dark:via-neutral-950/82" />
+          <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-coparent-surface via-coparent-surface/86 to-transparent dark:from-neutral-950 dark:via-neutral-950/82" />
         </div>
 
         <Container className="relative z-10">
@@ -270,7 +270,7 @@ export default function CoParentingPage() {
         </Container>
       </section>
 
-      <section id="registration" className="bg-[#f5f8ee] py-20 dark:bg-neutral-950">
+      <section id="registration" className="bg-coparent-surface py-20 dark:bg-neutral-950">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
             <AnimateIn className="max-w-xl">
@@ -365,7 +365,7 @@ export default function CoParentingPage() {
         </Container>
       </section>
 
-      <section className="bg-[#f5f8ee] py-20 dark:bg-neutral-950">
+      <section className="bg-coparent-surface py-20 dark:bg-neutral-950">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px]">
             <AnimateIn>

@@ -490,7 +490,7 @@ export default function TrainingPage() {
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <AnimateIn animation="fade-up">
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-training-100 backdrop-blur">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase text-training-100 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-training-300" />
               Training Programs
             </span>
@@ -552,11 +552,11 @@ export default function TrainingPage() {
           <AnimateIn animation="fade-up">
             <div className="mb-10 flex flex-col gap-5 sm:mb-16 sm:gap-6 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
-                <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-training-500">
+                <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase text-training-500">
                   <span className="h-2 w-2 rounded-full bg-training-500" />
                   Process
                 </span>
-                <h2 className="text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+                <h2 className="text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                   How to Become a{" "}
                   <br className="hidden sm:block" />
                   <span className="font-semibold text-training-500">
@@ -583,11 +583,11 @@ export default function TrainingPage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
-              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-training-500">
+              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase text-training-500">
                 <span className="h-2 w-2 rounded-full bg-training-500" />
                 Four Tracks
               </span>
-              <h2 className="text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="text-4xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Certification{" "}
                 <span className="font-semibold text-training-500">Tracks</span>
               </h2>
@@ -613,7 +613,7 @@ export default function TrainingPage() {
                         <span className={`mr-2 h-2.5 w-2.5 rounded-full ${s.dot}`} />
                         {track.hours} hrs minimum
                       </div>
-                      <h3 className={`text-lg font-bold leading-tight tracking-tight sm:text-[1.7rem] ${s.title}`}>
+                      <h3 className={`text-lg font-bold leading-tight sm:text-[1.7rem] ${s.title}`}>
                         {track.name}
                       </h3>
                       <p className={`mt-2 text-sm font-medium leading-relaxed opacity-75 ${s.title}`}>
@@ -624,7 +624,7 @@ export default function TrainingPage() {
                     {/* Details */}
                     <div className="relative z-10 flex flex-1 flex-col gap-5 border-t border-black/[0.08] pt-5 sm:gap-6 sm:pt-6 xl:flex-row xl:gap-8">
                       <div className="flex-1">
-                        <p className={`mb-3 text-[11px] font-bold uppercase tracking-widest ${s.title}`}>
+                        <p className={`mb-3 text-[11px] font-bold uppercase ${s.title}`}>
                           Required Courses
                         </p>
                         <ul className="space-y-2.5">
@@ -640,7 +640,7 @@ export default function TrainingPage() {
                       </div>
                       <div className="flex flex-1 flex-col gap-5 sm:gap-6">
                         <div>
-                          <p className={`mb-2 text-[11px] font-bold uppercase tracking-widest ${s.title}`}>
+                          <p className={`mb-2 text-[11px] font-bold uppercase ${s.title}`}>
                             Mentorship
                           </p>
                           <p className={`text-sm leading-relaxed opacity-80 sm:font-semibold ${s.title}`}>
@@ -648,7 +648,7 @@ export default function TrainingPage() {
                           </p>
                         </div>
                         <div>
-                          <p className={`mb-2 text-[11px] font-bold uppercase tracking-widest ${s.title}`}>
+                          <p className={`mb-2 text-[11px] font-bold uppercase ${s.title}`}>
                             Required Documents
                           </p>
                           <p className={`text-sm leading-relaxed opacity-80 sm:font-semibold ${s.title}`}>
@@ -672,11 +672,11 @@ export default function TrainingPage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mb-8 sm:mb-12">
-              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-training-500">
+              <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase text-training-500">
                 <span className="h-2 w-2 rounded-full bg-training-500" />
                 Courses We Offer
               </span>
-              <h2 className="text-3xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="text-3xl font-normal text-neutral-900 sm:text-[3.45rem]">
                 Training{" "}
                 <span className="font-semibold text-training-500">Courses</span>
               </h2>
@@ -745,10 +745,10 @@ export default function TrainingPage() {
 
                     {/* Tags */}
                     <div className="mt-3.5 flex flex-wrap gap-2 sm:mt-4 sm:gap-2.5">
-                      <span className="rounded-md bg-yellow-100/70 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest text-yellow-700/70 sm:text-[10px]">
+                      <span className="rounded-md bg-yellow-100/70 px-2.5 py-1 text-[9px] font-extrabold uppercase text-yellow-700/70 sm:text-[10px]">
                         {course.hours}
                       </span>
-                      <span className={`rounded-md px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest sm:text-[10px] ${trackTagTheme}`}>
+                      <span className={`rounded-md px-2.5 py-1 text-[9px] font-extrabold uppercase sm:text-[10px] ${trackTagTheme}`}>
                         {course.tracks}
                       </span>
                     </div>
@@ -769,11 +769,11 @@ export default function TrainingPage() {
             {/* Left — Requirements & Tips */}
             <AnimateIn animation="fade-right">
               <div>
-                <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-training-500">
+                <span className="mb-4 inline-flex items-center gap-2 text-xs font-bold uppercase text-training-500">
                   <span className="h-2 w-2 rounded-full bg-training-500" />
                   Good to Know
                 </span>
-                <h2 className="text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.55rem]">
+                <h2 className="text-3xl font-normal text-neutral-900 sm:text-[2.55rem]">
                   Requirements &amp;{" "}
                   <span className="font-semibold text-training-500">Tips</span>
                 </h2>
@@ -834,7 +834,7 @@ export default function TrainingPage() {
                           <FileTextIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                         </div>
                         <div className="min-w-0">
-                          <span className="text-xs font-bold uppercase tracking-wider text-neutral-400">
+                          <span className="text-xs font-bold uppercaser text-neutral-400">
                             {form.id}
                           </span>
                           <p className="text-sm font-semibold leading-snug text-neutral-800 sm:text-base">

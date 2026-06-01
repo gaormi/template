@@ -192,7 +192,7 @@ export default function ContactPage() {
           <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-end">
             <AnimateIn animation="fade-right">
               <div>
-                <p className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary-700 ring-1 ring-primary-100">
+                <p className="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-xs font-bold uppercase text-primary-700 ring-1 ring-primary-100">
                   <span className="h-2 w-2 rounded-full bg-primary-500" />
                   Contact
                 </p>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-950/55 via-primary-950/10 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <p className="font-mono text-xs font-bold uppercase tracking-widest text-white/75">
+                      <p className="font-mono text-xs font-bold uppercase text-white/75">
                         Harrisonburg office
                       </p>
                       <p className="mt-2 text-xl font-bold leading-tight text-white">
@@ -274,7 +274,7 @@ export default function ContactPage() {
                   key={note.label}
                   className={`p-5 ${index === 0 ? "" : "border-t border-neutral-200 sm:border-t-0 sm:border-l"}`}
                 >
-                  <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+                  <p className="text-xs font-bold uppercase text-neutral-400">
                     {note.label}
                   </p>
                   <p className="mt-3 text-sm font-semibold leading-relaxed text-neutral-800">
@@ -292,7 +292,7 @@ export default function ContactPage() {
           <div className="mb-8 grid gap-5 lg:grid-cols-[0.44fr_0.56fr] lg:items-start">
             <AnimateIn animation="fade-right">
               <div>
-                <h2 className="text-3xl font-medium tracking-tight text-neutral-950 sm:text-[3.1rem]">
+                <h2 className="text-3xl font-medium text-neutral-950 sm:text-[3.1rem]">
                   Route your message once.
                 </h2>
               </div>
@@ -324,7 +324,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-700">
+              <p className="text-xs font-bold uppercase text-primary-700">
                 Need service details first?
               </p>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
@@ -394,7 +394,7 @@ function ContactLine({
         {icon}
       </div>
       <div>
-        <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
+        <p className="text-xs font-bold uppercase text-neutral-400">
           {label}
         </p>
         <p className="mt-1 break-words text-lg font-bold leading-snug text-neutral-950">
@@ -438,7 +438,7 @@ function RouteRow({
         </div>
       </div>
       <div>
-        <h3 className="text-xl font-bold tracking-tight text-neutral-950">
+        <h3 className="text-xl font-bold text-neutral-950">
           {route.name}
         </h3>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-neutral-600">
@@ -452,7 +452,7 @@ function RouteRow({
             href={phone.href}
             className={`block font-bold ${tone.link}`}
           >
-            <span className="block text-[11px] font-bold uppercase tracking-widest text-neutral-400">
+            <span className="block text-[11px] font-bold uppercase text-neutral-400">
               {phone.label}
             </span>
             <span className="block">{phone.value}</span>
@@ -462,7 +462,7 @@ function RouteRow({
           href={route.emailHref}
           className={`block min-w-0 break-all font-bold ${tone.link}`}
         >
-          <span className="block text-[11px] font-bold uppercase tracking-widest text-neutral-400">
+          <span className="block text-[11px] font-bold uppercase text-neutral-400">
             Email
           </span>
           <span className="block">{route.email}</span>
