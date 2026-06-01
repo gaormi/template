@@ -17,6 +17,33 @@
   --color-primary-700: #1d5e96;
   --color-primary-800: #1c4f7c;
   --color-primary-900: #1c4367;
+  --color-primary-950: #102a42;
+
+  /* Police auxiliary — calm institutional blue */
+  --color-police-50: #eef7ff;
+  --color-police-100: #d9ecfb;
+  --color-police-200: #b8daf4;
+  --color-police-300: #8bc0ea;
+  --color-police-400: #5b9fd9;
+  --color-police-500: #347fc2;
+  --color-police-600: #2868a3;
+  --color-police-700: #235584;
+  --color-police-800: #21496d;
+  --color-police-900: #203e5c;
+  --color-police-950: #14263a;
+
+  /* Police Referral Mediation — muted red */
+  --color-prm-50: #fdf4f3;
+  --color-prm-100: #f7dfdd;
+  --color-prm-200: #edc0bc;
+  --color-prm-300: #df9b95;
+  --color-prm-400: #cc746d;
+  --color-prm-500: #b85b55;
+  --color-prm-600: #9c4945;
+  --color-prm-700: #813d3b;
+  --color-prm-800: #693635;
+  --color-prm-900: #563030;
+  --color-prm-950: #321819;
 
   /* Training — Green #2D9966 */
   --color-training-50: #f0faf5;
@@ -42,17 +69,17 @@
   --color-coparent-800: #84451c;
   --color-coparent-900: #6d3a1a;
 
-  /* Restorative Justice — Purple #A05DFE */
-  --color-rj-50: #f6f2ff;
-  --color-rj-100: #ede8ff;
-  --color-rj-200: #ddd3ff;
-  --color-rj-300: #c4afff;
-  --color-rj-400: #a05dfe;
-  --color-rj-500: #8e45eb;
-  --color-rj-600: #7c30d9;
-  --color-rj-700: #6924b6;
-  --color-rj-800: #572095;
-  --color-rj-900: #491d7a;
+  /* Restorative Justice — softer purple */
+  --color-rj-50: #f7f4fb;
+  --color-rj-100: #eee8f6;
+  --color-rj-200: #ded2ed;
+  --color-rj-300: #c8b5df;
+  --color-rj-400: #aa8dcc;
+  --color-rj-500: #8b68b6;
+  --color-rj-600: #76569d;
+  --color-rj-700: #614982;
+  --color-rj-800: #4f3d69;
+  --color-rj-900: #3f3154;
 
   /* Training certification track cards */
   --color-cert-gdc-bg: #f0f4ff;
@@ -93,7 +120,8 @@
   --color-course-all-tag-bg: #e6e0f3;
   --color-course-all-text: #7e70a8;
 
-  --color-training-grid: #e2e8f0;
+  --color-layout-grid: #e2e8f0;
+  --color-training-grid: var(--color-layout-grid);
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);

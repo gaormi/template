@@ -742,9 +742,12 @@ export default function Home() {
                 community members, regardless of financial circumstances.
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="/contact" size="lg" className="rounded-full bg-white text-primary-700 shadow-lg hover:bg-primary-50 focus-visible:ring-white">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-primary-700 shadow-lg transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 active:scale-[0.98]"
+                >
                   Donate to Fairfield
-                </Button>
+                </Link>
                 <Button
                   href="/contact"
                   size="lg"

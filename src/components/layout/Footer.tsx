@@ -34,7 +34,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/services/police-referral" className="text-sm text-neutral-600 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400">
-                    Police Referred Mediation
+                    Police Referral
                   </Link>
                 </li>
                 <li>
@@ -81,7 +81,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <span>590 Neff Avenue, Suite 3000</span>
+                  <span>Community Mennonite Church, 2nd Floor</span>
+                  <br />
+                  <span>70 S High St</span>
                   <br />
                   <span>Harrisonburg, VA 22801</span>
                 </li>

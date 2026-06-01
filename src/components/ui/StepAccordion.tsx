@@ -11,8 +11,32 @@ interface Step {
   icon?: React.ReactNode;
 }
 
-export default function StepAccordion({ steps }: { steps: Step[] }) {
+type AccordionTheme = "training" | "primary";
+
+const accordionThemes = {
+  training: {
+    activeButton: "bg-training-500 text-white",
+    inactiveButton: "bg-training-50 text-neutral-800",
+    inactiveNum: "text-training-400",
+  },
+  primary: {
+    activeButton: "bg-primary-600 text-white",
+    inactiveButton: "bg-primary-50 text-neutral-800",
+    inactiveNum: "text-primary-400",
+  },
+};
+
+export default function StepAccordion({
+  steps,
+  label = "Step",
+  theme = "training",
+}: {
+  steps: Step[];
+  label?: string;
+  theme?: AccordionTheme;
+}) {
   const [active, setActive] = useState<number | null>(0);
+  const mobileTheme = accordionThemes[theme];
 
   return (
     <div>
@@ -63,7 +87,7 @@ export default function StepAccordion({ steps }: { steps: Step[] }) {
                 }}
               >
                 <span className="mb-3 inline-block w-fit rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white/70 backdrop-blur-sm">
-                  Step {step.num}
+                  {label} {step.num}
                 </span>
                 <h3 className="text-lg font-bold text-white sm:text-[1.45rem]">
                   {step.title}
@@ -103,10 +127,10 @@ export default function StepAccordion({ steps }: { steps: Step[] }) {
               <button
                 onClick={() => setActive(isActive ? null : i)}
                 className={`flex w-full items-center gap-3 p-4 text-left transition-colors sm:gap-4 ${
-                  isActive ? "bg-training-500 text-white" : "bg-training-50 text-neutral-800"
+                  isActive ? mobileTheme.activeButton : mobileTheme.inactiveButton
                 }`}
               >
-                <span className={`text-sm font-extrabold ${isActive ? "text-white/60" : "text-training-400"}`}>
+                <span className={`text-sm font-extrabold ${isActive ? "text-white/60" : mobileTheme.inactiveNum}`}>
                   {step.num}
                 </span>
                 <span className="flex-1 text-sm font-bold">{step.title}</span>

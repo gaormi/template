@@ -24,8 +24,8 @@ const mobileThemes = {
     button: "bg-rj-600 hover:bg-rj-700",
   },
   policeReferral: {
-    text: "text-red-700 dark:text-red-300",
-    button: "bg-red-600 hover:bg-red-700",
+    text: "text-prm-700 dark:text-prm-300",
+    button: "bg-prm-600 hover:bg-prm-700",
   },
 };
 

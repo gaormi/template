@@ -117,19 +117,19 @@ export default function PoliceReferralPage() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-neutral-900/64 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-red-950/50 via-transparent to-primary-950/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-prm-950/50 via-transparent to-police-950/25" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/55 to-transparent" />
 
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-red-100 backdrop-blur">
-                <span className="h-2 w-2 rounded-full bg-red-300" />
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-prm-100 backdrop-blur">
+                <span className="h-2 w-2 rounded-full bg-prm-300" />
                 October 2024 - October 2027
               </p>
               <h1 className="mt-6 text-[2.25rem] font-medium leading-[1.08] text-white sm:text-[4.25rem] sm:leading-[1.05] md:text-[5.125rem]">
                 Police-Referred{" "}
-                <span className="font-serif italic text-red-200">
+                <span className="font-serif italic text-prm-200">
                   Mediation Program
                 </span>
               </h1>
@@ -143,7 +143,7 @@ export default function PoliceReferralPage() {
                   href={REFERRAL_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-red-800 shadow-xl backdrop-blur-sm transition-all duration-300 hover:bg-red-800/90 hover:text-white active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-prm-800 shadow-xl backdrop-blur-sm transition-all duration-300 hover:bg-prm-800/90 hover:text-white active:scale-[0.98]"
                 >
                   Refer a Case
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -169,7 +169,7 @@ export default function PoliceReferralPage() {
           <div className="grid gap-5 text-center md:grid-cols-3">
             {quickFacts.map((fact) => (
               <div key={fact.label}>
-                <p className="text-sm font-bold uppercase tracking-widest text-red-800/75">
+                <p className="text-sm font-bold uppercase tracking-widest text-prm-800/75">
                   {fact.label}
                 </p>
                 <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-neutral-500">
@@ -197,9 +197,9 @@ export default function PoliceReferralPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 48vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-950/70 via-red-900/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-prm-950/70 via-prm-900/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary-600">
+                  <p className="text-xs font-bold uppercase tracking-widest text-police-700">
                     Free Resource
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
@@ -211,13 +211,13 @@ export default function PoliceReferralPage() {
 
             <AnimateIn animation="fade-left" delay={120}>
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800">
-                  <span className="h-2 w-2 rounded-full bg-primary-500" />
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+                  <span className="h-2 w-2 rounded-full bg-police-500" />
                   Program Overview
                 </p>
                 <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                   What is{" "}
-                  <span className="font-semibold text-red-800">
+                  <span className="font-semibold text-prm-800">
                     Police-Referred Mediation?
                   </span>
                 </h2>
@@ -262,13 +262,13 @@ export default function PoliceReferralPage() {
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800">
-                <span className="h-2 w-2 rounded-full bg-red-700" />
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+                <span className="h-2 w-2 rounded-full bg-prm-700" />
                 How Mediation Helps
               </p>
               <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                 Services &{" "}
-                <span className="font-semibold text-red-800">Solutions</span>
+                <span className="font-semibold text-prm-800">Solutions</span>
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
                 Our mediators and practitioners take the time needed to help
@@ -292,9 +292,9 @@ export default function PoliceReferralPage() {
           </div>
 
           <AnimateIn animation="fade-up" delay={160}>
-            <div className="mt-10 rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm shadow-primary-100/50 sm:p-8">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800">
-                <span className="h-2 w-2 rounded-full bg-primary-500" />
+            <div className="mt-10 rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm shadow-police-100/50 sm:p-8">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+                <span className="h-2 w-2 rounded-full bg-police-500" />
                 Common Referrals
               </p>
               <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral-500">
@@ -305,7 +305,7 @@ export default function PoliceReferralPage() {
                 {referralTypes.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-red-200/70 bg-red-50/70 px-4 py-2 text-sm font-bold text-red-800 shadow-sm"
+                    className="rounded-full border border-prm-200/70 bg-prm-50/70 px-4 py-2 text-sm font-bold text-prm-800 shadow-sm"
                   >
                     {item}
                   </span>
@@ -320,13 +320,13 @@ export default function PoliceReferralPage() {
         <Container>
           <AnimateIn animation="fade-up">
             <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-16">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800">
-                <span className="h-2 w-2 rounded-full bg-red-700" />
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+                <span className="h-2 w-2 rounded-full bg-prm-700" />
                 Program Goals
               </p>
               <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                 A practical path for officers and{" "}
-                <span className="font-semibold text-red-800">
+                <span className="font-semibold text-prm-800">
                   community members
                 </span>
               </h2>
@@ -347,13 +347,13 @@ export default function PoliceReferralPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-red-950 py-10 text-white sm:py-20">
+      <section className="relative overflow-hidden bg-prm-950 py-10 text-white sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
             <AnimateIn animation="fade-right">
               <div>
-                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-100">
-                  <span className="h-2 w-2 rounded-full bg-red-300" />
+                <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-100">
+                  <span className="h-2 w-2 rounded-full bg-prm-300" />
                   Statewide Initiative
                 </p>
                 <h2 className="mt-4 text-4xl font-normal tracking-tight text-white sm:text-[3.45rem]">
@@ -379,7 +379,7 @@ export default function PoliceReferralPage() {
             </AnimateIn>
 
             <AnimateIn animation="fade-left" delay={120}>
-              <div className="relative min-h-[420px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-red-950/20">
+              <div className="relative min-h-[420px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-prm-950/20">
                 <Image
                   src={BACKGROUND_IMAGE}
                   alt="Community gathering outdoors"
@@ -387,16 +387,16 @@ export default function PoliceReferralPage() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 48vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-prm-950/80 via-prm-950/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 rounded-3xl bg-white/90 p-5 shadow-2xl backdrop-blur">
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary-600">
+                  <p className="text-xs font-bold uppercase tracking-widest text-police-700">
                     Key Partners
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {partners.map((partner) => (
                       <span
                         key={partner}
-                        className="rounded-full bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-700"
+                        className="rounded-full bg-police-50 px-3 py-1.5 text-sm font-bold text-police-700"
                       >
                         {partner}
                       </span>
@@ -408,13 +408,13 @@ export default function PoliceReferralPage() {
           </div>
 
           <AnimateIn animation="fade-up" delay={180}>
-            <blockquote className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 text-white shadow-xl shadow-red-950/20 backdrop-blur sm:p-10">
+            <blockquote className="mt-10 rounded-[2rem] border border-white/10 bg-white/[0.06] p-7 text-white shadow-xl shadow-prm-950/20 backdrop-blur sm:p-10">
               <p className="font-serif text-2xl leading-snug text-white/86">
                 "This project helps Virginians get easy access to justice... It
                 provides a less adversarial, less formal, and more empowering
                 way to resolve conflicts."
               </p>
-              <p className="mt-6 text-sm font-bold uppercase tracking-widest text-red-100">
+              <p className="mt-6 text-sm font-bold uppercase tracking-widest text-prm-100">
                 Christine Poulson Executive Director, Resolution Virginia
               </p>
             </blockquote>
@@ -424,8 +424,8 @@ export default function PoliceReferralPage() {
 
       <section className="bg-white py-10 sm:py-20">
         <Container>
-          <div className="grid overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-xl shadow-primary-100/60 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="relative min-h-[320px] bg-red-950">
+          <div className="grid overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-xl shadow-police-100/60 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="relative min-h-[320px] bg-prm-950">
               <Image
                 src={CONTACT_IMAGE}
                 alt="Community conversation around a table"
@@ -433,16 +433,16 @@ export default function PoliceReferralPage() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 42vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-red-950/70 via-red-950/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-prm-950/70 via-prm-950/10 to-transparent" />
             </div>
             <div className="p-8 sm:p-10 lg:p-12">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-800">
-                <span className="h-2 w-2 rounded-full bg-primary-500" />
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-prm-800">
+                <span className="h-2 w-2 rounded-full bg-police-500" />
                 How Officers Can Refer a Case
               </p>
               <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
                 Download and complete the{" "}
-                <span className="font-semibold text-red-800">
+                <span className="font-semibold text-prm-800">
                   fillable PDF referral form
                 </span>{" "}
                 to start the process.
@@ -451,7 +451,7 @@ export default function PoliceReferralPage() {
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <a
                   href="mailto:prm@fairfieldcetner.org"
-                  className="rounded-2xl border border-primary-100 bg-neutral-50 p-5 transition-colors hover:border-primary-300"
+                  className="rounded-2xl border border-police-100 bg-neutral-50 p-5 transition-colors hover:border-police-300"
                 >
                   <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                     Email
@@ -461,14 +461,14 @@ export default function PoliceReferralPage() {
                   </p>
                 </a>
                 <a
-                  href="tel:+15404340059"
-                  className="rounded-2xl border border-primary-100 bg-neutral-50 p-5 transition-colors hover:border-primary-300"
+                  href="tel:+15404537560"
+                  className="rounded-2xl border border-police-100 bg-neutral-50 p-5 transition-colors hover:border-police-300"
                 >
                   <p className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                     Phone
                   </p>
                   <p className="mt-1 text-lg font-bold text-neutral-900">
-                    (540) 434-0059 (Please leave a message)
+                    (540) 453-7560
                   </p>
                 </a>
               </div>
@@ -478,14 +478,14 @@ export default function PoliceReferralPage() {
                   href={REFERRAL_FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-red-800 px-8 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-red-900 active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full bg-prm-800 px-8 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-prm-900 active:scale-[0.98]"
                 >
                   Download Referral Form
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </a>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-primary-100 px-8 py-3.5 text-sm font-bold text-primary-700 transition-all duration-300 hover:bg-primary-50 active:scale-[0.98]"
+                  className="inline-flex items-center justify-center rounded-full border border-police-100 px-8 py-3.5 text-sm font-bold text-police-700 transition-all duration-300 hover:bg-police-50 active:scale-[0.98]"
                 >
                   Connect With Us
                 </Link>
@@ -521,7 +521,7 @@ function GridBackdrop() {
       className="pointer-events-none absolute inset-0 opacity-60"
       style={{
         backgroundImage:
-          "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
+          "linear-gradient(to right, var(--color-layout-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-layout-grid) 1px, transparent 1px)",
         backgroundSize: "40px 40px",
         maskImage: "radial-gradient(circle at center, black, transparent 80%)",
         WebkitMaskImage: "radial-gradient(circle at center, black, transparent 80%)",
@@ -540,8 +540,8 @@ function OverviewCard({
   icon: (props: { className?: string }) => React.ReactNode;
 }) {
   return (
-    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60 sm:p-8">
-      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
+    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-police-100/60 sm:p-8">
+      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-police-100 text-police-600 transition-colors duration-300 group-hover:bg-police-600 group-hover:text-white">
         <Icon className="h-6 w-6" />
       </div>
       <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
@@ -562,15 +562,15 @@ function ServiceCard({
   tone: string;
 }) {
   const theme = {
-    red: "bg-red-100 text-red-800 group-hover:bg-red-800",
-    blue: "bg-primary-100 text-primary-600 group-hover:bg-primary-600",
+    red: "bg-prm-100 text-prm-800 group-hover:bg-prm-800",
+    blue: "bg-police-100 text-police-600 group-hover:bg-police-600",
     purple: "bg-rj-100 text-rj-600 group-hover:bg-rj-600",
     green: "bg-training-100 text-training-600 group-hover:bg-training-600",
     orange: "bg-coparent-100 text-coparent-600 group-hover:bg-coparent-600",
   }[tone];
 
   return (
-    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/50">
+    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-police-100/50">
       <div
         className={`mb-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-colors duration-300 group-hover:text-white ${theme}`}
       >
@@ -584,14 +584,14 @@ function ServiceCard({
 
 function GoalCard({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="h-full rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60 sm:p-8">
-      <p className="text-xs font-bold uppercase tracking-widest text-red-800">
+    <div className="h-full rounded-[2.5rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-police-100/60 sm:p-8">
+      <p className="text-xs font-bold uppercase tracking-widest text-prm-800">
         {title}
       </p>
       <ul className="mt-6 space-y-4">
         {items.map((item) => (
           <li key={item} className="flex gap-3 text-sm leading-relaxed text-neutral-600">
-            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-800">
+            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-prm-100 text-prm-800">
               <CheckIcon className="h-3.5 w-3.5" />
             </span>
             {item}

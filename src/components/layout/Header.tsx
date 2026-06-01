@@ -8,7 +8,7 @@ import MobileNav from "./MobileNav";
 
 const servicesLinks = [
   { href: "/services/mediation", label: "Mediation" },
-  { href: "/services/police-referral", label: "Police Referred Mediation" },
+  { href: "/services/police-referral", label: "Police Referral" },
   { href: "/services/restorative-justice", label: "Restorative Justice" },
 ];
 
@@ -16,7 +16,6 @@ const programsLinks = [
   { href: "/training", label: "Become a Mediator" },
   { href: "/training/ethics", label: "Ethics Workshop" },
   { href: "/training/co-parenting", label: "Co-Parenting Class" },
-  { href: "/training/cme", label: "Continuing Ed (CME)" },
 ];
 
 const navThemes = {
@@ -39,10 +38,10 @@ const navThemes = {
     dropdown: "hover:bg-rj-50 hover:text-rj-700",
   },
   policeReferral: {
-    nav: "border-red-300/70 shadow-red-200/20",
-    cta: "bg-red-500 hover:bg-red-600",
-    hover: "hover:text-red-600",
-    dropdown: "hover:bg-red-50 hover:text-red-700",
+    nav: "border-prm-300/70 shadow-prm-200/20",
+    cta: "bg-prm-600 hover:bg-prm-700",
+    hover: "hover:text-prm-600",
+    dropdown: "hover:bg-prm-50 hover:text-prm-700",
   },
 };
 

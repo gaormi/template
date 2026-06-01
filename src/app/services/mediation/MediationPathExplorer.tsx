@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
+import StepAccordion from "~/components/ui/StepAccordion";
 
 export type MediationPath = "court" | "private";
 
 type AccordionItem = {
   title: string;
   content: string;
+  image?: string;
 };
 
-type PricingTierColor = "primary" | "training" | "coparent";
+type PricingTierColor = "primary" | "yellow" | "green";
 
 const COURT_IMAGE =
   "https://images.unsplash.com/photo-1745847768380-2caeadbb3b71?auto=format&fit=crop&q=80&w=1200";
@@ -22,52 +24,85 @@ const PRIVATE_IMAGE =
   "https://images.unsplash.com/photo-1752659305529-509d9ca33ebb?auto=format&fit=crop&q=80&w=1200";
 const COURT_VISUAL =
   "https://images.unsplash.com/photo-1763729805496-b5dbf7f00c79?auto=format&fit=crop&q=80&w=1400";
+const JDR_VISUAL =
+  "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1400";
 const PRIVATE_VISUAL =
   "https://images.unsplash.com/photo-1714978444477-18c70c41ddf9?auto=format&fit=crop&q=80&w=1400";
 
-const courtTopics: AccordionItem[] = [
+const gdcCourtTopics: AccordionItem[] = [
   {
-    title: "Court Orientation",
+    title: "How Mediation Works",
     content:
-      "Court-referred parties may be required to attend a brief orientation. The orientation explains mediation, confidentiality, and whether the process is a good fit. Choosing to continue with mediation remains voluntary.",
+      "Mediation is a confidential process using trained, neutral third-party mediators to help people discuss communication breakdowns, confusion over roles and expectations, and options for resolving conflict.",
   },
   {
-    title: "GDC & Circuit Civil Matters",
+    title: "Ground Rules",
     content:
-      "Fairfield mediates civil disputes including landlord-tenant concerns, business and consumer interactions, money owed, debts, return of property, loans, contracts, personal injury, workplace conflict, estate issues, and elder care.",
+      "Everyone is given an opportunity to speak, share their side of the story, listen openly, remain respectful, and look for common interests that may help everyone find a workable resolution.",
   },
   {
-    title: "JDR Family Matters",
+    title: "GDC Civil Topics",
     content:
-      "For custody, visitation, support, and separation issues, parties can discuss parenting plans, medical and educational decisions, childcare, travel, holiday schedules, support information, property, debt, and other family transitions.",
+      "Civil mediation can address landlord-tenant concerns, business and consumer interactions, money owed or debts, return of property, loans, contracts, personal injury, workplace conflict, estate issues, and elder care.",
   },
   {
     title: "Agreement & Court",
     content:
-      "When an agreement is reached, the mediator records the terms in a formal document. Agreements can be enforceable contracts and may be entered as an order when appropriate. If no agreement is reached, the court date remains available.",
+      "When a resolution is reached, the mediator records the points of agreement in a formal document. Once finalized and signed, the agreement is a legally recognized contract designed to be fair, achievable, and enforceable.",
+  },
+];
+
+const jdrCourtTopics: AccordionItem[] = [
+  {
+    title: "Custody",
+    content:
+      "Come prepared to discuss major decisions including medical treatment and emergencies, educational plans and childcare, cultural values and upbringing, travel plans, and contact information.",
+  },
+  {
+    title: "Visitation",
+    content:
+      "Come prepared to discuss regular weekdays, weekends, summertime, the school year, holidays, vacations, and how major holidays may be shared or alternated between parents.",
+  },
+  {
+    title: "Child Support",
+    content:
+      "Bring key information such as gross monthly income, child health care costs, work-related child care costs, and extra-curricular activities.",
+  },
+  {
+    title: "Property Separation",
+    content:
+      "Plans can address house or land, household furnishings, insurance, business interests, retirement, inheritance, bank accounts, spousal support, income tax returns, consumer debt, pets, medical bills, and future debt responsibilities.",
   },
 ];
 
 const privateTopics: AccordionItem[] = [
   {
-    title: "Comprehensive Case Assessment & Intake",
+    title: "Intake",
     content:
-      "Includes individual pre-mediation consultations to identify core issues, screening for domestic safety and suitability, and dedicated case coordination so all parties are prepared.",
+      "Includes individual pre-mediation consultations to identify core issues, screening for domestic safety and suitability, and dedicated case coordination to ensure all parties are prepared.",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200",
   },
   {
-    title: "Structured Mediation Sessions",
+    title: "Mediation Session",
     content:
-      "Standard packages include up to 3 hours of direct mediation, typically structured as one 2-hour primary session and one 1-hour follow-up. This may include joint discussions and private caucuses as needed.",
+      "Standard packages include up to 3 hours of direct mediation, typically structured as one 2-hour primary session and one 1-hour follow-up. This covers both joint discussions and private caucuses, or individual meetings, as needed to facilitate settlement.",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
   },
   {
-    title: "Professional Documentation Services",
+    title: "Documentation",
     content:
-      "Includes preparation of formal documentation resulting from mediation, such as comprehensive separation or property settlement agreements, court-ready parenting plans, and child support worksheets when applicable.",
+      "Professional preparation of formal, formally structured documentation resulting from mediation, such as comprehensive separation or property settlement agreements, parenting plans formatted for court submission, and child support worksheets.",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
   },
   {
-    title: "Administrative & Finalization Support",
+    title: "Finalization",
     content:
-      "Includes post-session revisions to draft agreements and support for the signing process so the agreement is ready for court filing or implementation.",
+      "Post-session revisions to draft agreements and support for the formal signing process to ensure the agreement is ready for court filing or implementation.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
   },
 ];
 
@@ -81,8 +116,8 @@ const courtDetails = [
     text: "Mediation discussions, notes, and offers cannot be used against you in court if unresolved. Mediators do not testify.",
   },
   {
-    title: "Court-Subsidized",
-    text: "Court-referred cases are generally subsidized through contracts with the Supreme Court of Virginia.",
+    title: "Session Options",
+    text: "Options include in-person sessions or video conferencing.",
   },
 ];
 
@@ -93,57 +128,60 @@ const privatePricingGroups = [
     subtitle: "GDC & CCC",
     color: "primary",
     summary:
-      "Civil cases: contracts, business disputes, small claims, landlord-tenant issues, consumer-merchant disputes, estate distribution, neighborhood and workplace conflict.",
+      "General civil and community mediation for GDC and CCC matters.",
     options: [
       {
         label: "Tier 1A",
-        title: "General District Court",
+        title: "General District Court (GDC)",
         price: "$450",
-        text: "Court-related civil matters including small claims, contract and business disputes, landlord-tenant issues, consumer-merchant disputes, and estate distribution disagreements.",
+        text: "Applicable to: Court-related civil matters, including but not limited to Small Claims, Monies related to Contract and Business disputes, Landlord-Tenant issues, Consumer-Merchant disputes, and personal property disagreements meeting the GDC jurisdiction.",
       },
       {
         label: "Tier 1B",
-        title: "Community Mediation",
+        title: "Circuit Court Civil Mediation (CCC)",
         price: "$550",
-        text: "Community-based disputes such as neighborhood and HOA grievances, workplace conflicts, interpersonal disputes, and other non-court-specific community issues.",
+        text: "Applicable to: Civil issues in and/or out of court, including but not limited to, complex business and contract disputes, personal injury claims, high-value estate/probate contests, employment disputes, and complex property or land disagreements meeting the CCC jurisdiction.",
       },
     ],
   },
   {
     tier: "Tier 2",
-    title: "Comprehensive Separation & Divorce",
-    subtitle: "CCF with CVS or no CVS",
-    color: "training",
+    title: "Comprehensive Separation & Divorce Mediation",
+    subtitle: "CCF w/CVS or no CVS",
+    color: "yellow",
     summary:
-      "Separation cases: equitable distribution, retirement accounts, business interests, debt allocation, parenting plans, custody, visitation, and child support.",
+      "This tier is divided based on whether Child, Visitation, and Support matters are included.",
     options: [
       {
-        label: "Tier 2A",
-        title: "Financial & Property Only",
+        label: "Tier 2A / CCF",
+        title: "Financial & Property Only (No CVS)",
         price: "$550",
-        text: "Equitable distribution, retirement accounts, business interests, debt allocation, and separation agreements that do not involve minor children.",
+        color: "yellow",
+        text: "Applicable to: Divorce and Equitable Distribution, retirement accounts, business interests, debt allocation, and separation agreements that do not involve minor children.",
       },
       {
-        label: "Tier 2B",
-        title: "Separation & Divorce with CVS",
+        label: "Tier 2B / CVS",
+        title: "Separation & Divorce (With CVS)",
         price: "$650",
-        text: "Full-service mediation for financial and property issues plus complex parenting plans, custody arrangements, visitation schedules, and child support calculations.",
+        color: "yellow",
+        text: "Applicable to: Full-service mediation including all financial and property issues plus complex parenting plans, custody arrangements, visitation schedules, and child support calculations.",
       },
     ],
   },
   {
     tier: "Tier 3",
     title: "Custody, Visitation & Support",
-    subtitle: "Parenting plans and support modifications",
-    color: "coparent",
+    subtitle: "CVS",
+    color: "green",
     summary:
-      "Family cases: co-parenting arrangements, visitation schedules, child support calculations, parenting plans, and post-divorce modifications.",
+      "Custody, visitation, and support mediation for parenting plans, co-parenting arrangements, and support modifications.",
     options: [
       {
-        label: "Tier 3",
+        label: "Tier 3 / CVS",
         title: "Custody, Visitation & Support",
         price: "$550",
-        text: "Co-parenting arrangements, visitation schedules, child support calculations, and parenting plans for unmarried parents or post-divorce modifications.",
+        color: "green",
+        text: "Applicable to: Co-parenting arrangements, visitation schedules, child support calculations, and parenting plans for unmarried parents or post-divorce modifications.",
       },
     ],
   },
@@ -157,6 +195,7 @@ const privatePricingGroups = [
     label: string;
     title: string;
     price: string;
+    color?: PricingTierColor;
     text: string;
   }>;
 }>;
@@ -204,7 +243,7 @@ export default function MediationPathExplorer({
         className="pointer-events-none absolute inset-0 opacity-70"
         style={{
           backgroundImage:
-            "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
+            "linear-gradient(to right, var(--color-layout-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-layout-grid) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
           maskImage: "radial-gradient(circle at center, black, transparent 80%)",
           WebkitMaskImage:
@@ -218,7 +257,7 @@ export default function MediationPathExplorer({
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Choose Your Path
             </p>
-            <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+            <h2 className="mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
               Start with the right{" "}
               <span className="font-semibold text-primary-500">
                 mediation path
@@ -249,17 +288,7 @@ export default function MediationPathExplorer({
         </AnimateIn>
 
         <div className="mt-10 border-t border-primary-100/80 pt-8 sm:mt-14 sm:pt-10">
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
-                Currently viewing
-              </p>
-              <h3 className="mt-1 text-2xl font-bold text-neutral-900">
-                {activePath === "private"
-                  ? "Private Mediation"
-                  : "Court-Referred Mediation"}
-              </h3>
-            </div>
+          <div className="mb-8 flex justify-start">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-primary-600 px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-primary-700 active:scale-[0.98]"
@@ -295,10 +324,10 @@ function PathChoice({
       type="button"
       aria-pressed={active}
       onClick={onClick}
-      className={`group overflow-hidden rounded-[2rem] border bg-white text-left shadow-sm transition-all duration-500 hover:-translate-y-1 sm:rounded-[2.5rem] ${
+      className={`group overflow-hidden rounded-[2rem] border bg-white text-left shadow-sm transition-colors duration-300 sm:rounded-[2.5rem] ${
         active
-          ? "border-primary-500 shadow-xl shadow-primary-200/70"
-          : "border-white hover:border-primary-200 hover:shadow-xl hover:shadow-primary-100/60"
+          ? "border-primary-500 shadow-md shadow-primary-100/70"
+          : "border-white hover:border-primary-200"
       }`}
     >
       <div className="grid min-h-full sm:grid-cols-[0.45fr_0.55fr]">
@@ -339,7 +368,7 @@ function PathChoice({
               {active ? "Showing now" : "Switch to this"}
             </span>
             <span
-              className={`flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${
+              className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-300 ${
                 active
                   ? "bg-primary-100 text-primary-700"
                   : "bg-slate-100 text-slate-500"
@@ -358,17 +387,42 @@ function CourtContent() {
   return (
     <div className="space-y-10 sm:space-y-16">
       <AnimateIn animation="fade-up">
-        <OverviewPanel
-          eyebrow="Court-Referred Cases"
-          title="What to expect when the court refers your case"
-          description="The court may require a short orientation, but the decision to mediate is voluntary. If everyone chooses to continue, the mediator helps the parties discuss issues and write any agreement reached."
-          items={courtTopics}
-          image={COURT_VISUAL}
-          label="Orientation"
-          visualTitle="10-15 minutes to understand the process"
-          visualText="Parties learn how mediation works, what confidentiality means, and whether the process fits their case."
-        />
+        <div>
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+            <span className="h-2 w-2 rounded-full bg-primary-500" />
+            Court-Referred Cases
+          </p>
+          <h3 className="mt-4 max-w-4xl text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+            What to expect when the court refers your case
+          </h3>
+          <p className="mt-5 max-w-5xl text-lg leading-relaxed text-neutral-500">
+            Court-referred mediation depends on the type of court case. GDC
+            civil matters and JDR family matters prepare for different
+            conversations, documents, and outcomes.
+          </p>
+        </div>
       </AnimateIn>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <AnimateIn animation="fade-up">
+          <CourtTrackPanel
+            eyebrow="GDC brochure"
+            title="General District Court Civil Mediation"
+            description="For civil disputes such as landlord-tenant concerns, business and consumer interactions, money owed, property return, loans, contracts, personal injury, workplace conflict, estate issues, and elder care."
+            image={COURT_VISUAL}
+            topics={gdcCourtTopics}
+          />
+        </AnimateIn>
+        <AnimateIn animation="fade-up" delay={100}>
+          <CourtTrackPanel
+            eyebrow="JDR brochure"
+            title="Juvenile & Domestic Relations Family Mediation"
+            description="For family matters involving custody, visitation, support, property separation, parenting schedules, communication, and agreements focused on children's best interests."
+            image={JDR_VISUAL}
+            topics={jdrCourtTopics}
+          />
+        </AnimateIn>
+      </div>
 
       <div className="grid gap-5 md:grid-cols-3">
         {courtDetails.map((item, index) => (
@@ -382,34 +436,66 @@ function CourtContent() {
           </AnimateIn>
         ))}
       </div>
+    </div>
+  );
+}
 
-      <AnimateIn animation="fade-up">
-        <div className="rounded-[2.5rem] bg-primary-900 p-7 text-white shadow-xl shadow-primary-100/70 sm:p-10">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+function CourtTrackPanel({
+  eyebrow,
+  title,
+  description,
+  image,
+  topics,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: string;
+  topics: AccordionItem[];
+}) {
+  return (
+    <section className="h-full overflow-hidden rounded-[2.5rem] border border-neutral-100 bg-white shadow-sm">
+      <div className="relative min-h-72 overflow-hidden bg-primary-950">
+        <Image
+          src={image}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/88 via-primary-900/34 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+            {eyebrow}
+          </p>
+          <h3 className="mt-3 text-3xl font-bold leading-tight">{title}</h3>
+          <p className="mt-3 text-sm font-medium leading-relaxed text-white/86">
+            {description}
+          </p>
+        </div>
+      </div>
+
+      <div className="divide-y divide-neutral-200 p-6 sm:p-8">
+        {topics.map((topic, index) => (
+          <div
+            key={topic.title}
+            className="grid gap-4 py-5 first:pt-0 last:pb-0 sm:grid-cols-[3rem_1fr]"
+          >
+            <p className="text-xs font-bold tracking-widest text-primary-500">
+              {String(index + 1).padStart(2, "0")}
+            </p>
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-primary-200">
-                Come Prepared
+              <h4 className="text-lg font-bold leading-snug text-neutral-900">
+                {topic.title}
+              </h4>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                {topic.content}
               </p>
-              <h3 className="mt-3 text-3xl font-medium leading-tight">
-                Helpful topics to think through before mediation
-              </h3>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                "Children's best interests",
-                "Medical and educational decisions",
-                "Holiday and vacation schedules",
-                "Income, childcare, and healthcare costs",
-                "Property, debts, and support",
-                "Business, contracts, or money owed",
-              ].map((item) => (
-                <ChecklistItem key={item}>{item}</ChecklistItem>
-              ))}
             </div>
           </div>
-        </div>
-      </AnimateIn>
-    </div>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -419,9 +505,11 @@ function PrivateContent() {
       <AnimateIn animation="fade-up">
         <OverviewPanel
           eyebrow="Private Mediation"
-          title="A start-to-finish package for direct mediation requests"
+          title="A start-to-finish package for direct mediation request"
+          titleSingleLine
           description="Private mediation is for people who want to begin outside a court referral. Packages include intake, screening, mediation time, documentation, revisions, and signing support."
           items={privateTopics}
+          itemPresentation="visual"
           image={PRIVATE_VISUAL}
           label="Package Includes"
           visualTitle="Up to 3 hours of direct mediation"
@@ -436,7 +524,7 @@ function PrivateContent() {
               <span className="h-2 w-2 rounded-full bg-primary-500" />
               Fee Tiers
             </p>
-            <h3 className="mt-3 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+            <h3 className="mt-3 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
               Private service packages
             </h3>
           </div>
@@ -455,25 +543,36 @@ function PrivateContent() {
         </div>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {privateTerms.map((item, index) => (
-          <AnimateIn
-            key={item}
-            animation="fade-up"
-            delay={index * 80}
-            className="flex"
-          >
-            <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60">
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700">
-                <CheckIcon className="h-5 w-5" />
-              </div>
-              <p className="text-sm font-semibold leading-relaxed text-neutral-700">
-                {item}
+      <AnimateIn animation="fade-up">
+        <div className="border-t border-neutral-200 pt-10">
+          <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:gap-12">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
+                <span className="h-2 w-2 rounded-full bg-primary-500" />
+                Private package terms
               </p>
+              <h3 className="mt-3 text-3xl font-normal leading-tight tracking-tight text-neutral-900">
+                Read before intake
+              </h3>
             </div>
-          </AnimateIn>
-        ))}
-      </div>
+            <ol className="relative border-l border-primary-100">
+              {privateTerms.map((item, index) => (
+                <li
+                  key={item}
+                  className="relative mb-7 border-b border-neutral-200 pb-7 pl-8 last:mb-0 last:border-b-0 last:pb-0 sm:pl-10"
+                >
+                  <span className="absolute -left-[1.125rem] top-0 flex h-9 w-9 items-center justify-center rounded-full border border-primary-100 bg-white text-xs font-bold text-primary-600 shadow-sm shadow-primary-100/50">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
+                    {item}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </AnimateIn>
     </div>
   );
 }
@@ -487,6 +586,8 @@ function OverviewPanel({
   label,
   visualTitle,
   visualText,
+  itemPresentation = "plain",
+  titleSingleLine = false,
 }: {
   eyebrow: string;
   title: string;
@@ -496,6 +597,8 @@ function OverviewPanel({
   label: string;
   visualTitle: string;
   visualText: string;
+  itemPresentation?: "plain" | "visual";
+  titleSingleLine?: boolean;
 }) {
   return (
     <div>
@@ -503,61 +606,92 @@ function OverviewPanel({
         <span className="h-2 w-2 rounded-full bg-primary-500" />
         {eyebrow}
       </p>
-      <h3 className="mt-4 max-w-4xl text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+      <h3
+        className={`mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem] ${
+          titleSingleLine ? "max-w-none xl:whitespace-nowrap" : "max-w-4xl"
+        }`}
+      >
         {title}
       </h3>
       <p className="mt-5 max-w-5xl text-lg leading-relaxed text-neutral-500">
         {description}
       </p>
 
-      <div className="mt-9 grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
-        <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] shadow-xl shadow-neutral-200/60 lg:row-span-2 lg:min-h-0">
-          <Image
-            src={image}
-            alt=""
-            fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-900/20 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
-              {label}
-            </p>
-            <h4 className="mt-3 text-2xl font-bold leading-tight">
-              {visualTitle}
-            </h4>
-            <p className="mt-3 text-sm leading-relaxed text-white/82">
-              {visualText}
-            </p>
-          </div>
-        </div>
-
-        {items.map((item) => (
-          <div
-            key={item.title}
-            className="group flex min-h-48 flex-col rounded-[2rem] border border-primary-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60"
-          >
-            <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-primary-700 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
-              <CheckIcon className="h-5 w-5" />
+      {itemPresentation === "visual" ? (
+        <VisualOverviewLayout items={items} />
+      ) : (
+        <div className="mt-9 grid gap-5 lg:auto-rows-fr lg:grid-cols-3">
+          <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] shadow-lg shadow-neutral-200/60 lg:row-span-2 lg:min-h-0">
+            <Image
+              src={image}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-900/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
+                {label}
+              </p>
+              <h4 className="mt-3 text-2xl font-bold leading-tight">
+                {visualTitle}
+              </h4>
+              <p className="mt-3 text-sm leading-relaxed text-white/82">
+                {visualText}
+              </p>
             </div>
-            <h4 className="text-lg font-bold leading-snug text-neutral-900">
-              {item.title}
-            </h4>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-              {item.content}
-            </p>
           </div>
-        ))}
-      </div>
+
+          {items.map((item, index) => (
+            <div
+              key={item.title}
+              className="flex min-h-48 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30"
+            >
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
+                Included {String(index + 1).padStart(2, "0")}
+              </p>
+              <h4 className="mt-5 text-lg font-bold leading-snug text-neutral-900">
+                {item.title}
+              </h4>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                {item.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function VisualOverviewLayout({
+  items,
+}: {
+  items: AccordionItem[];
+}) {
+  const accordionItems = items.map((item, index) => ({
+    num: String(index + 1).padStart(2, "0"),
+    title: item.title,
+    content: item.content,
+    image: item.image,
+  }));
+
+  return (
+    <div className="mt-9">
+      <StepAccordion
+        steps={accordionItems}
+        label="Included"
+        theme="primary"
+      />
     </div>
   );
 }
 
 function DetailCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60">
-      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-700 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
+    <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-7 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30">
+      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-700">
         <ShieldIcon className="h-5 w-5" />
       </div>
       <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
@@ -583,6 +717,7 @@ function PricingTierGroup({
     label: string;
     title: string;
     price: string;
+    color?: PricingTierColor;
     text: string;
   }>;
 }) {
@@ -592,27 +727,45 @@ function PricingTierGroup({
       dot: "bg-primary-500",
       label: "text-primary-600",
       divider: "border-primary-900/[0.08]",
-      shadow: "hover:shadow-primary-100/80",
+      optionAccent: "border-primary-100",
     },
-    training: {
-      card: "border-training-100 bg-training-50/60",
-      dot: "bg-training-500",
-      label: "text-training-600",
-      divider: "border-training-900/[0.08]",
-      shadow: "hover:shadow-training-100/80",
+    yellow: {
+      card: "border-cert-ccc-decor-start bg-cert-ccc-bg",
+      dot: "bg-cert-ccc-dot",
+      label: "text-yellow-700",
+      divider: "border-cert-ccc-text/[0.12]",
+      optionAccent: "border-cert-ccc-decor-start",
     },
-    coparent: {
-      card: "border-coparent-100 bg-coparent-50/65",
-      dot: "bg-coparent-500",
-      label: "text-coparent-600",
-      divider: "border-coparent-900/[0.08]",
-      shadow: "hover:shadow-coparent-100/80",
+    green: {
+      card: "border-cert-jdr-decor-start bg-cert-jdr-bg",
+      dot: "bg-cert-jdr-dot",
+      label: "text-emerald-700",
+      divider: "border-cert-jdr-text/[0.12]",
+      optionAccent: "border-cert-jdr-decor-start",
     },
   }[color];
 
+  const optionThemes = {
+    primary: {
+      accent: "border-primary-100",
+      dot: "bg-primary-500",
+      label: "text-primary-600",
+    },
+    yellow: {
+      accent: "border-cert-ccc-decor-start",
+      dot: "bg-cert-ccc-dot",
+      label: "text-yellow-700",
+    },
+    green: {
+      accent: "border-cert-jdr-decor-start",
+      dot: "bg-cert-jdr-dot",
+      label: "text-emerald-700",
+    },
+  };
+
   return (
     <div
-      className={`relative overflow-hidden rounded-[2rem] border p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl sm:rounded-[2.5rem] sm:p-8 ${theme.card} ${theme.shadow}`}
+      className={`relative overflow-hidden rounded-[2rem] border p-6 shadow-sm sm:rounded-[2.5rem] sm:p-8 ${theme.card}`}
     >
       <div className="mb-6">
         <div className="mb-4 inline-flex items-center rounded-full bg-white/80 px-3.5 py-1.5 text-xs font-bold text-slate-700 shadow-sm backdrop-blur-md">
@@ -632,29 +785,47 @@ function PricingTierGroup({
           options.length > 1 ? "md:grid-cols-2" : "md:grid-cols-1"
         }`}
       >
-        {options.map((option) => (
-          <div key={option.label} className="flex flex-col rounded-[1.75rem] bg-white/80 p-5 shadow-sm backdrop-blur">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <div>
-                <p className={`text-xs font-bold uppercase tracking-widest ${theme.label}`}>
-                  {option.label}
+        {options.map((option, optionIndex) => {
+          const optionTheme = option.color
+            ? optionThemes[option.color]
+            : {
+                accent: theme.optionAccent,
+                dot: theme.dot,
+                label: theme.label,
+              };
+
+          return (
+            <div
+              key={option.label}
+              className={`flex flex-col border-l-4 pl-4 ${optionTheme.accent}`}
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p
+                    className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest ${optionTheme.label}`}
+                  >
+                    <span
+                      className={`h-2 w-2 rounded-full ${optionTheme.dot}`}
+                    />
+                    {option.label}
+                  </p>
+                  <h4 className="mt-1 text-xl font-bold text-neutral-900">
+                    {option.title}
+                  </h4>
+                </div>
+                <p className="shrink-0 text-neutral-900">
+                  <span className="text-4xl font-bold">{option.price}</span>
+                  <span className="ml-1 text-sm font-semibold text-neutral-500">
+                    /pp
+                  </span>
                 </p>
-                <h4 className="mt-1 text-xl font-bold text-neutral-900">
-                  {option.title}
-                </h4>
               </div>
-              <p className="shrink-0 text-neutral-900">
-                <span className="text-4xl font-bold">{option.price}</span>
-                <span className="ml-1 text-sm font-semibold text-neutral-500">
-                  /pp
-                </span>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-500">
+                {option.text}
               </p>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500">
-              {option.text}
-            </p>
-          </div>
-        ))}
+          );
+        })}
 
         <Link
           href="/contact"
@@ -664,17 +835,6 @@ function PricingTierGroup({
           <ArrowRightIcon className="ml-2 h-4 w-4" />
         </Link>
       </div>
-    </div>
-  );
-}
-
-function ChecklistItem({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex min-h-12 items-center gap-3 rounded-2xl bg-white/12 px-4 py-3 text-sm font-semibold text-white">
-      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-primary-700">
-        <CheckIcon className="h-3.5 w-3.5" />
-      </span>
-      {children}
     </div>
   );
 }
@@ -692,24 +852,6 @@ function ArrowRightIcon({ className }: { className?: string }) {
         strokeLinejoin="round"
         strokeWidth={2}
         d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-      />
-    </svg>
-  );
-}
-
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2.5}
-        d="M5 13l4 4L19 7"
       />
     </svg>
   );

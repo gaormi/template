@@ -12,24 +12,21 @@ const HERO_IMAGE = "/photos/mediation.jpg";
 const PROCESS_IMAGE =
   "https://images.unsplash.com/photo-1762341104168-63ddb56e9805?auto=format&fit=crop&q=80&w=1600";
 
-const trustItems = [
-  "Virginia's First Mediation Center",
-  "Established 1982",
-  "Se provee servicios en espanol",
-];
-
 const valueCards = [
   {
     title: "Neutral & Impartial",
     text: "Mediators do not take sides. They structure a fair conversation so parties can clarify concerns and find common ground.",
+    icon: BalanceIcon,
   },
   {
     title: "Confidential",
     text: "Mediation is private. Discussions, notes, and offers are legally protected and cannot be used in court if unresolved.",
+    icon: LockIcon,
   },
   {
     title: "Practical",
     text: "The process helps people identify issues, consider options, and write agreements designed around real schedules and responsibilities.",
+    icon: ClipboardCheckIcon,
   },
 ];
 
@@ -38,57 +35,41 @@ const journey = [
     step: "01",
     title: "Intake & Screening",
     text: "Staff speak with each party individually to understand the issues, confirm willingness, and screen for safety and suitability.",
-    icon: ClipboardCheckIcon,
-    card: "border-primary-100 bg-primary-50/55 hover:shadow-primary-100/70",
-    iconStyle:
-      "bg-white text-primary-600 ring-primary-100 group-hover:bg-primary-600 group-hover:text-white",
-    label: "text-primary-500/70",
+    card: "border-neutral-200 bg-white",
+    label: "text-primary-600",
     badge: "bg-primary-100 text-primary-700",
   },
   {
     step: "02",
     title: "Orientation",
     text: "The mediator explains the process, confidentiality, ground rules, and the voluntary choice to continue.",
-    icon: CompassIcon,
-    card:
-      "border-training-100 bg-training-50/60 hover:shadow-training-100/70",
-    iconStyle:
-      "bg-white text-training-600 ring-training-100 group-hover:bg-training-600 group-hover:text-white",
-    label: "text-training-600/75",
-    badge: "bg-training-100 text-training-700",
+    card: "border-neutral-200 bg-white",
+    label: "text-primary-600",
+    badge: "bg-primary-100 text-primary-700",
   },
   {
     step: "03",
     title: "Joint Session",
     text: "Parties share perspectives, identify concerns, and may use private caucuses when separate conversations would help.",
-    icon: ConversationIcon,
-    card: "border-coparent-100 bg-coparent-50/65 hover:shadow-coparent-100/70",
-    iconStyle:
-      "bg-white text-coparent-600 ring-coparent-100 group-hover:bg-coparent-600 group-hover:text-white",
-    label: "text-coparent-600/75",
-    badge: "bg-coparent-100 text-coparent-700",
+    card: "border-neutral-200 bg-white",
+    label: "text-primary-600",
+    badge: "bg-primary-100 text-primary-700",
   },
   {
     step: "04",
     title: "Agreement Drafting",
     text: "When a resolution is reached, the mediator records the agreed points in a formal document for review and signing.",
-    icon: DocumentPenIcon,
-    card: "border-rj-100 bg-rj-50/60 hover:shadow-rj-100/70",
-    iconStyle:
-      "bg-white text-rj-600 ring-rj-100 group-hover:bg-rj-600 group-hover:text-white",
-    label: "text-rj-600/75",
-    badge: "bg-rj-100 text-rj-700",
+    card: "border-neutral-200 bg-white",
+    label: "text-primary-600",
+    badge: "bg-primary-100 text-primary-700",
   },
   {
     step: "05",
     title: "Resolution",
     text: "Signed agreements can be implemented privately or, for court matters, submitted to the court as appropriate.",
-    icon: SealCheckIcon,
-    card: "border-slate-200 bg-slate-50 hover:shadow-slate-200/70",
-    iconStyle:
-      "bg-white text-slate-600 ring-slate-200 group-hover:bg-slate-800 group-hover:text-white",
-    label: "text-slate-500",
-    badge: "bg-slate-200 text-slate-700",
+    card: "border-neutral-200 bg-white",
+    label: "text-primary-600",
+    badge: "bg-primary-100 text-primary-700",
   },
 ];
 
@@ -107,7 +88,7 @@ export default async function MediationPage({
 
   return (
     <main className="bg-white text-neutral-800">
-      <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-0 lg:pb-0">
+      <section className="relative flex min-h-[68vh] items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-28 lg:pt-20 lg:pb-16">
         <Image
           src={HERO_IMAGE}
           alt="Two people talking across a quiet table"
@@ -123,7 +104,7 @@ export default async function MediationPage({
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-bold uppercase tracking-widest text-primary-100 backdrop-blur">
+              <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-[11px] font-bold uppercase leading-relaxed tracking-[0.12em] text-primary-100 backdrop-blur sm:text-sm sm:tracking-widest">
                 <span className="h-2 w-2 rounded-full bg-primary-300" />
                 Conflict Resolution & Mediation Services
               </p>
@@ -158,27 +139,12 @@ export default async function MediationPage({
         </Container>
       </section>
 
-      <section className="border-y border-neutral-100 bg-white py-7">
-        <Container>
-          <div className="grid gap-5 text-center md:grid-cols-3">
-            {trustItems.map((item) => (
-              <p
-                key={item}
-                className="text-sm font-bold uppercase tracking-widest text-primary-500/75"
-              >
-                {item}
-              </p>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="relative overflow-hidden py-10 sm:py-20">
         <div
           className="pointer-events-none absolute inset-0 opacity-60"
           style={{
             backgroundImage:
-              "linear-gradient(to right, var(--color-training-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-training-grid) 1px, transparent 1px)",
+              "linear-gradient(to right, var(--color-layout-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--color-layout-grid) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
             maskImage: "radial-gradient(circle at center, black, transparent 80%)",
             WebkitMaskImage:
@@ -187,43 +153,45 @@ export default async function MediationPage({
         />
         <Container className="relative z-10">
           <AnimateIn animation="fade-up">
-            <div className="mx-auto mb-10 max-w-4xl text-center sm:mb-16">
+            <div className="mx-auto mb-10 max-w-6xl text-center sm:mb-16">
               <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-500">
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 What Mediation Does
               </p>
-              <h2 className="mt-5 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
-                A trained, neutral mediator helps people talk through conflict,
-                identify issues, and create agreements that are{" "}
+              <h2 className="mt-5 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
+                A trained neutral mediator helps people{" "}
                 <span className="font-semibold text-primary-500">
-                  clear enough to use
+                  clarify issues and reach practical agreements.
                 </span>
-                .
               </h2>
             </div>
           </AnimateIn>
 
           <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
-            {valueCards.map((item, index) => (
-              <AnimateIn
-                key={item.title}
-                animation="fade-up"
-                delay={index * 100}
-                className="flex"
-              >
-                <div className="group flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-100/60 sm:p-8">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-600 transition-colors duration-300 group-hover:bg-primary-600 group-hover:text-white">
-                    <CheckIcon className="h-5 w-5" />
+            {valueCards.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <AnimateIn
+                  key={item.title}
+                  animation="fade-up"
+                  delay={index * 100}
+                  className="flex"
+                >
+                  <div className="flex flex-1 flex-col rounded-[2rem] border border-neutral-100 bg-white p-6 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/35 sm:p-8">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-700">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                      {item.text}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-neutral-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-                    {item.text}
-                  </p>
-                </div>
-              </AnimateIn>
-            ))}
+                </AnimateIn>
+              );
+            })}
           </div>
         </Container>
       </section>
@@ -238,7 +206,7 @@ export default async function MediationPage({
                 <span className="h-2 w-2 rounded-full bg-primary-500" />
                 The Process
               </p>
-              <h2 className="mt-4 text-4xl font-normal tracking-tight text-neutral-900 sm:text-[3.45rem]">
+              <h2 className="mt-4 text-3xl font-normal tracking-tight text-neutral-900 sm:text-[2.75rem]">
                 The 5-step{" "}
                 <span className="font-semibold text-primary-500">
                   journey
@@ -253,7 +221,7 @@ export default async function MediationPage({
           </AnimateIn>
 
           <AnimateIn animation="fade-up">
-            <div className="relative min-h-[340px] overflow-hidden rounded-[2.5rem] shadow-xl shadow-neutral-200/60">
+            <div className="relative min-h-[320px] overflow-hidden rounded-[2.5rem] shadow-lg shadow-neutral-200/60">
               <Image
                 src={PROCESS_IMAGE}
                 alt="A person taking notes on a clipboard"
@@ -262,21 +230,19 @@ export default async function MediationPage({
                 sizes="100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-950/80 via-primary-900/25 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 max-w-md rounded-3xl bg-white/92 p-5 shadow-2xl backdrop-blur sm:bottom-8 sm:left-8 sm:p-6">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary-500">
+              <div className="absolute bottom-6 left-6 right-6 max-w-md text-white sm:bottom-8 sm:left-8">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary-100">
                   Initial step
                 </p>
-                <p className="mt-1 text-lg font-bold text-neutral-900">
+                <p className="mt-2 text-2xl font-bold leading-tight">
                   Intake, safety screening, and orientation
                 </p>
               </div>
             </div>
           </AnimateIn>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {journey.map((item, index) => {
-              const Icon = item.icon;
-
               return (
                 <AnimateIn
                   key={item.step}
@@ -285,21 +251,16 @@ export default async function MediationPage({
                   className="flex"
                 >
                   <div
-                    className={`group flex flex-1 flex-col rounded-[2rem] border p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-xl ${item.card}`}
+                    className={`flex flex-1 flex-col rounded-[2rem] border p-5 shadow-sm transition-colors duration-300 hover:border-primary-200 hover:bg-primary-50/30 ${item.card}`}
                   >
                     <div className="flex items-center justify-between gap-3">
-                      <div className={`flex h-12 w-12 items-center justify-center rounded-2xl shadow-sm ring-1 transition-colors ${item.iconStyle}`}>
-                        <Icon className="h-6 w-6" />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-sm font-bold text-primary-700 ring-1 ring-primary-100">
+                        {item.step}
                       </div>
                       <span className={`text-xs font-bold uppercase tracking-widest ${item.label}`}>
-                        Step {item.step}
+                        {index === 0 ? "Start here" : `Step ${item.step}`}
                       </span>
                     </div>
-                    {index === 0 && (
-                      <span className={`mt-5 self-start rounded-full px-3 py-1 text-xs font-bold ${item.badge}`}>
-                        Start here
-                      </span>
-                    )}
                     <h3 className="mt-4 text-xl font-bold text-slate-900">
                       {item.title}
                     </h3>
@@ -349,6 +310,42 @@ function CheckIcon({ className }: { className?: string }) {
         strokeLinejoin="round"
         strokeWidth={2.5}
         d="M5 13l4 4L19 7"
+      />
+    </svg>
+  );
+}
+
+function BalanceIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.9}
+        d="M12 4v16m-6-3h12M7 7h10M7 7l-4 7h8L7 7Zm10 0-4 7h8l-4-7Z"
+      />
+    </svg>
+  );
+}
+
+function LockIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.9}
+        d="M7 10V8a5 5 0 0 1 10 0v2m-9 0h8a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Zm4 4v2"
       />
     </svg>
   );
