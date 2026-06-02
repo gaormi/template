@@ -3,13 +3,13 @@
   "name": "fairfield-center",
   "compatibility_date": "2025-03-25",
   "compatibility_flags": ["nodejs_compat"],
-  "hyperdrive": [
-    {
-      "binding": "HYPERDRIVE",
-      "id": "<YOUR_HYPERDRIVE_ID>",
-      "localConnectionString": "postgresql://postgres:postgres@localhost:5432/fairfield"
-    }
-  ],
+  // "hyperdrive": [
+  //   {
+  //     "binding": "HYPERDRIVE",
+  //     "id": "<YOUR_HYPERDRIVE_ID>",
+  //     "localConnectionString": "postgresql://postgres:postgres@localhost:5432/fairfield"
+  //   }
+  // ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -29,5 +29,13 @@
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
-  }
+  },
+  "routes": [
+    {
+      "pattern": "fairfieldcenter.org",
+      "custom_domain": true
+    }
+  ],
+  "preview_urls": false,
+  "workers_dev": false
 }

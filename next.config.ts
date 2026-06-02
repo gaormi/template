@@ -35,6 +35,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/rj",
+        destination: "/services/restorative-justice",
+        permanent: true,
+      },
+      {
+        source: "/rj/:path*",
+        destination: "/services/restorative-justice",
+        permanent: true,
+      },
+      {
         source: "/restorative-justice",
         destination: "/services/restorative-justice",
         permanent: true,
@@ -82,6 +92,51 @@ const nextConfig: NextConfig = {
       {
         source: "/about-us/:path*",
         destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/news-events",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/news-events/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/news-and-events",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/news-and-events/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/news",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/news/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/events",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/events/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug*",
+        destination: "/",
         permanent: true,
       },
     ];
