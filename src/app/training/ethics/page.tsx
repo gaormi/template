@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2200";
+  "/photos/training/ethics-hero.webp";
 const DISCUSSION_IMAGE =
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1400";
+  "/photos/training/ethics-discussion.webp";
 
 const courseFacts = [
   {

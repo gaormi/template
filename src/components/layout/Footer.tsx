@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
+import { TRAINING_CALENDAR_URL } from "~/components/const/links";
 
 export default function Footer() {
   return (
@@ -58,7 +59,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://calendar.google.com/calendar/embed?src=c_45e7f382f3ae921e0e047070d0d1d8d8ba02d21bae9bce774ed38dae5183981e%40group.calendar.google.com&ctz=America%2FNew_York"
+                    href={TRAINING_CALENDAR_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-neutral-600 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"

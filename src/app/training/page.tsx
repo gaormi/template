@@ -4,6 +4,10 @@ import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 import Button from "~/components/ui/Button";
 import StepAccordion from "~/components/ui/StepAccordion";
+import {
+  TRAINING_CALENDAR_URL,
+  TRAINING_EVENTS_URL,
+} from "~/components/const/links";
 
 const pageTitle = "Mediator Training in Virginia | FairField Center";
 const pageDescription =
@@ -38,7 +42,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
 );
 
-const trainingCalendarUrl = "https://calendar.google.com/calendar/embed?src=c_45e7f382f3ae921e0e047070d0d1d8d8ba02d21bae9bce774ed38dae5183981e%40group.calendar.google.com&ctz=America%2FNew_York";
+const trainingCalendarUrl = TRAINING_CALENDAR_URL;
 
 /* ── Step icons (small, 16x16) ── */
 const UserCheckIcon = ({ className }: { className?: string }) => (
@@ -318,8 +322,8 @@ const courses: Course[] = [
     hours: "24 hours",
     desc: "Build core mediation skills through negotiation, communication, and guided practice.",
     tracks: "All tracks",
-    url: "https://www.resolutionvirginia.org/event-details/basic-mediation-gdc-training-2026-07-06-08-30",
-    image: "https://images.unsplash.com/photo-1673861895743-43e136439ee4?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/basic-mediation.webp",
     imageAlt: "Round table and empty chairs in a quiet meeting room",
     tone: "blue",
   },
@@ -328,8 +332,8 @@ const courses: Course[] = [
     hours: "4 hours",
     desc: "Learn how Virginia courts work and where mediation fits in the legal process.",
     tracks: "All tracks",
-    url: "https://www.resolutionvirginia.org/event-details/va-judicial-system-training-2026-07-24-12-30",
-    image: "https://images.unsplash.com/photo-1750365501430-395251fe4b7e?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/judicial-system.webp",
     imageAlt: "Courthouse building with columns and trees",
     tone: "blue",
   },
@@ -338,8 +342,8 @@ const courses: Course[] = [
     hours: "8 hours",
     desc: "Observe modeled mediation sessions when live observation is not available.",
     tracks: "GDC",
-    url: "https://www.resolutionvirginia.org/event-details/basic-mediation-gdc-observation-class-2026-08-06-08-30",
-    image: "https://images.unsplash.com/photo-1694253987646-353954f1889d?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/gdc-observation.webp",
     imageAlt: "Empty training room with a projector screen",
     tone: "blue",
   },
@@ -348,8 +352,8 @@ const courses: Course[] = [
     hours: "20 hours",
     desc: "Practice helping families make child-focused parenting and support agreements.",
     tracks: "J&DR, CCF",
-    url: "https://www.resolutionvirginia.org/event-details/family-mediation-jdr-training-2026-05-11-08-30",
-    image: "https://images.unsplash.com/photo-1758790015866-eca4eead1900?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/family-mediation.webp",
     imageAlt: "Children's playroom with toys and storage",
     tone: "green",
   },
@@ -358,8 +362,8 @@ const courses: Course[] = [
     hours: "8 hours",
     desc: "Learn screening tools and safety practices for domestic abuse concerns.",
     tracks: "J&DR, CCF",
-    url: "https://www.resolutionvirginia.org/event-details/domestic-violence-and-mediation-training-2026-06-04-15-00",
-    image: "https://images.unsplash.com/photo-1763370356082-124761e8c989?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/domestic-abuse.webp",
     imageAlt: "Padlock secured on an old wooden door",
     tone: "green",
   },
@@ -368,8 +372,8 @@ const courses: Course[] = [
     hours: "8 hours",
     desc: "Work through child support, spousal support, worksheets, and court-ready agreements.",
     tracks: "J&DR, CCF",
-    url: "https://www.resolutionvirginia.org/event-details/support-matters-in-virginias-family-courts-2026-03-12-08-30",
-    image: "https://images.unsplash.com/photo-1747161960385-3f0124db4365?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/support-matters.webp",
     imageAlt: "Calculator, pen, and documents on a desk",
     tone: "green",
   },
@@ -378,8 +382,8 @@ const courses: Course[] = [
     hours: "20 hours",
     desc: "Develop advanced skills for complex civil and multi-party disputes.",
     tracks: "CCC",
-    url: "https://www.resolutionvirginia.org/event-details/circuit-court-civil-training",
-    image: "https://images.unsplash.com/photo-1767972159871-b9f5d320be2b?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/circuit-court-civil.webp",
     imageAlt: "Wooden gavel resting on a closed law book",
     tone: "orange",
   },
@@ -388,8 +392,8 @@ const courses: Course[] = [
     hours: "12 hours",
     desc: "Prepare to mediate divorce, equitable distribution, and family financial issues.",
     tracks: "CCF",
-    url: "https://www.resolutionvirginia.org/event-details/circuit-court-family-training-2026-09-21-08-30",
-    image: "https://images.unsplash.com/photo-1503314885798-a70f8f9028d3?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/circuit-court-family.webp",
     imageAlt: "Two wedding rings on a neutral surface",
     tone: "orange",
   },
@@ -398,8 +402,8 @@ const courses: Course[] = [
     hours: "4 hours",
     desc: "Learn how to guide new mediators through planning, feedback, and evaluation.",
     tracks: "Mentor certification",
-    url: "https://www.resolutionvirginia.org/event-details/mentoring-others-seeking-mediator-certification-2026-08-10-08-30",
-    image: "https://images.unsplash.com/photo-1644030692053-7af7d152471a?auto=format&fit=crop&w=1200&q=80",
+    url: TRAINING_EVENTS_URL,
+    image: "/photos/training/courses/mentor-training.webp",
     imageAlt: "Open journal with a pen and glasses on a white surface",
     tone: "purple",
   },

@@ -10,8 +10,7 @@ type SearchParams = Promise<{
 }>;
 
 const HERO_IMAGE = "/photos/mediation.jpg";
-const PROCESS_IMAGE =
-  "https://images.unsplash.com/photo-1762341104168-63ddb56e9805?auto=format&fit=crop&q=80&w=1600";
+const PROCESS_IMAGE = "/photos/mediation/process.webp";
 
 const pageTitle = "Mediation Services in Virginia | FairField Center";
 const pageDescription =

@@ -5,10 +5,8 @@ import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 
 const HERO_IMAGE = "/photos/community.jpg";
-const PHILOSOPHY_IMAGE =
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1600";
-const CONTACT_IMAGE =
-  "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1600";
+const PHILOSOPHY_IMAGE = "/photos/services/rj-philosophy.webp";
+const CONTACT_IMAGE = "/photos/services/rj-contact.webp";
 
 const pageTitle = "Restorative Justice Services | FairField Center";
 const pageDescription =

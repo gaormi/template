@@ -18,16 +18,11 @@ type AccordionItem = {
 
 type PricingTierColor = "primary" | "yellow" | "green";
 
-const COURT_IMAGE =
-  "https://images.unsplash.com/photo-1745847768380-2caeadbb3b71?auto=format&fit=crop&q=80&w=1200";
-const PRIVATE_IMAGE =
-  "https://images.unsplash.com/photo-1752659305529-509d9ca33ebb?auto=format&fit=crop&q=80&w=1200";
-const COURT_VISUAL =
-  "https://images.unsplash.com/photo-1763729805496-b5dbf7f00c79?auto=format&fit=crop&q=80&w=1400";
-const JDR_VISUAL =
-  "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1400";
-const PRIVATE_VISUAL =
-  "https://images.unsplash.com/photo-1714978444477-18c70c41ddf9?auto=format&fit=crop&q=80&w=1400";
+const COURT_IMAGE = "/photos/mediation/court.webp";
+const PRIVATE_IMAGE = "/photos/mediation/private.webp";
+const COURT_VISUAL = "/photos/mediation/court-visual.webp";
+const JDR_VISUAL = "/photos/mediation/jdr-visual.webp";
+const PRIVATE_VISUAL = "/photos/mediation/private-visual.webp";
 
 const gdcCourtTopics: AccordionItem[] = [
   {
@@ -81,28 +76,28 @@ const privateTopics: AccordionItem[] = [
     content:
       "Includes individual pre-mediation consultations to identify core issues, screening for domestic safety and suitability, and dedicated case coordination to ensure all parties are prepared.",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200",
+      "/photos/mediation/intake.webp",
   },
   {
     title: "Mediation Session",
     content:
       "Standard packages include up to 3 hours of direct mediation, typically structured as one 2-hour primary session and one 1-hour follow-up. This covers both joint discussions and private caucuses, or individual meetings, as needed to facilitate settlement.",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200",
+      "/photos/mediation/session.webp",
   },
   {
     title: "Documentation",
     content:
       "Professional preparation of formal, formally structured documentation resulting from mediation, such as comprehensive separation or property settlement agreements, parenting plans formatted for court submission, and child support worksheets.",
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
+      "/photos/mediation/documentation.webp",
   },
   {
     title: "Finalization",
     content:
       "Post-session revisions to draft agreements and support for the formal signing process to ensure the agreement is ready for court filing or implementation.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+      "/photos/mediation/finalization.webp",
   },
 ];
 

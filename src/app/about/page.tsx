@@ -17,47 +17,41 @@ export const metadata: Metadata = {
 };
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2200";
+  "/photos/about/hero.webp";
 
 const team = [
   {
     name: "Aaron F. Hagmaier",
     role: "Director of Training Programs / Mediator",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2024/08/Aaron-Hagmaier.png?fit=1251%2C1251&ssl=1",
+    image: "/photos/about/team-aaron.webp",
   },
   {
     name: "Suzanne Praill",
     role: "Director of Restorative Justice / Mediator",
     note: "My goal is to live lightly on the Earth, do no harm and support those who seek to make amends.",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2024/08/Sue.png?fit=1280%2C1280&ssl=1",
+    image: "/photos/about/team-suzanne.webp",
   },
   {
     name: "Rina Gao",
     role: "Operational Manager / Visual Communications Specialist",
     note: "Life goes on",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2024/08/Rina.png?fit=1251%2C1251&ssl=1",
+    image: "/photos/about/team-rina.webp",
   },
   {
     name: "Rachel Bishop",
     role: "Court Coordinator / Case Manager",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2025/01/IMG_6676-Large.jpeg?fit=1280%2C1280&ssl=1",
+    image: "/photos/about/team-rachel.webp",
   },
   {
     name: "Helen Momoh",
     role: "Volunteer / Mediator",
     note: "We are bound in our humanity and in oneness and relationship with others.",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2024/08/Helen.png?fit=1251%2C1251&ssl=1",
+    image: "/photos/about/team-helen.webp",
   },
   {
     name: "Anna Pierce",
     role: "Client Services Coordinator",
-    image:
-      "https://i0.wp.com/fairfieldcenter.org/wp-content/uploads/2025/01/IMG_6670-Large.jpeg?fit=1280%2C1280&ssl=1",
+    image: "/photos/about/team-anna.webp",
   },
 ] satisfies Array<{
   name: string;

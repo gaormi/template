@@ -9,9 +9,9 @@ const EVENTBRITE_URL =
   "https://www.eventbrite.com/e/meeting-in-the-middle-positive-parenting-in-two-households-online-tickets-1975146673871";
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=2200";
+  "/photos/training/co-parenting-hero.webp";
 const REGISTRATION_IMAGE =
-  "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=900";
+  "/photos/training/co-parenting-registration.webp";
 
 const courseDetails = [
   { label: "Format", value: "Online through Zoom" },

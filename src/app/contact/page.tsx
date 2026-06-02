@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const OFFICE_IMAGE =
-  "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1600";
+  "/photos/contact/office.webp";
 
 const office = {
   venue: "Community Mennonite Church",
@@ -40,8 +40,7 @@ const routes = [
     name: "Mediation Services",
     description:
       "Court-connected mediation, private mediation intake, and community mediation questions.",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600",
+    image: "/photos/contact/mediation.webp",
     imageAlt: "A mediation handshake at a table",
     phones: [
       {
@@ -59,8 +58,7 @@ const routes = [
     name: "Mediator Training",
     description:
       "Mediator certification training, mentoring, course schedules, and continuing education questions.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=600",
+    image: "/photos/contact/training.webp",
     imageAlt: "Training notes and a laptop on a desk",
     phones: [
       {
@@ -78,8 +76,7 @@ const routes = [
     name: "Restorative Justice",
     description:
       "Restorative justice referrals, community conferencing, victim impact workshops, and facilitator questions.",
-    image:
-      "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&q=80&w=600",
+    image: "/photos/contact/restorative-justice.webp",
     imageAlt: "People gathered for a group conversation",
     phones: [
       {
@@ -102,8 +99,7 @@ const routes = [
     name: "Police-Referred Mediation",
     description:
       "Police referrals, officer questions, and community conflict support through PRM.",
-    image:
-      "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&q=80&w=600",
+    image: "/photos/contact/police-referral.webp",
     imageAlt: "Legal books and a quiet desk",
     phones: [
       {
@@ -117,8 +113,8 @@ const routes = [
         href: "tel:+15404537560",
       },
     ],
-    email: "prm@fairfieldcetner.org",
-    emailHref: "mailto:prm@fairfieldcetner.org",
+    email: "prm@fairfieldcenter.org",
+    emailHref: "mailto:prm@fairfieldcenter.org",
     tone: "prm",
   },
 ] satisfies Array<{
