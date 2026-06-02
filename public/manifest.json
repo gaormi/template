@@ -1,5 +1,5 @@
 {
-  "name": "Fairfield Center",
+  "name": "FairField Center",
   "short_name": "fairfield",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
@@ -9,9 +9,9 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "48x48",
-      "type": "image/x-icon"
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "~/components/layout/Container";
@@ -8,6 +9,30 @@ const PHILOSOPHY_IMAGE =
   "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1600";
 const CONTACT_IMAGE =
   "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=1600";
+
+const pageTitle = "Restorative Justice Services | FairField Center";
+const pageDescription =
+  "Restorative justice programs, victim impact workshops, peacemaking circles, and facilitator training for Virginia communities.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/services/restorative-justice",
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/services/restorative-justice",
+    images: [HERO_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [HERO_IMAGE],
+  },
+};
 
 type ProgramTone = "primary" | "training" | "coparent" | "rj";
 
@@ -182,7 +207,7 @@ export default function RestorativeJusticePage() {
                 </span>
               </h1>
               <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/82 sm:text-xl">
-                Fairfield Center helps people and communities respond to harm
+                FairField Center helps people and communities respond to harm
                 through voluntary processes rooted in empathy, responsibility,
                 dialogue, and meaningful repair.
               </p>
@@ -324,7 +349,7 @@ export default function RestorativeJusticePage() {
                 Our Programs & Services
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
-                Fairfield Center offers restorative practices for courts,
+                FairField Center offers restorative practices for courts,
                 schools, organizations, community members, and people directly
                 affected by harm.
               </p>

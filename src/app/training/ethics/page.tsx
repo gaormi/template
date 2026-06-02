@@ -4,9 +4,9 @@ import Link from "next/link";
 import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 
-const pageTitle = "Mediation Ethics Workshop | Fairfield Center";
+const pageTitle = "Mediation Ethics Workshop | FairField Center";
 const pageDescription =
-  "Fairfield Center's online Mediation Ethics workshop reviews Virginia mediator ethics, VA Code connections, UPL issues, and the mediator complaint process.";
+  "FairField Center's online Mediation Ethics workshop reviews Virginia mediator ethics, VA Code connections, UPL issues, and the mediator complaint process.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -44,7 +44,7 @@ const courseFacts = [
   {
     label: "Price",
     value: "$70",
-    detail: "Registration is handled through Fairfield Center's training portal.",
+    detail: "Registration is handled through FairField Center's training portal.",
     icon: TagIcon,
   },
 ];
@@ -86,7 +86,7 @@ const topics = [
 const policies = [
   "Participants need a computer with camera and microphone, plus a strong and secure internet connection.",
   "Missing any portion of the training may affect whether a completion certificate can be issued.",
-  "Missed time must be approved by Fairfield Center. If make-up time is possible outside class, one-on-one instructor time is billed at $75 per hour.",
+  "Missed time must be approved by FairField Center. If make-up time is possible outside class, one-on-one instructor time is billed at $75 per hour.",
   "OES approval does not by itself guarantee successful completion for mediator certification purposes.",
 ];
 
@@ -263,7 +263,7 @@ export default function EthicsTrainingPage() {
             </AnimateIn>
             <AnimateIn animation="fade-left" delay={80}>
               <p className="max-w-2xl text-base leading-relaxed text-neutral-600 lg:ml-auto">
-                These are the future 2026 sessions listed by Fairfield Center
+                These are the future 2026 sessions listed by FairField Center
                 as of June 1, 2026. Each session uses the same online format
                 and listed time.
               </p>

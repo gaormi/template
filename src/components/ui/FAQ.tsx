@@ -5,7 +5,7 @@ import { useState } from "react";
 const items = [
   {
     q: "How much does mediation cost?",
-    a: "As a non-profit, Fairfield Center offers services on a sliding fee scale based on household income. We believe financial barriers should not prevent access to resolution.",
+    a: "As a non-profit, FairField Center offers services on a sliding fee scale based on household income. We believe financial barriers should not prevent access to resolution.",
   },
   {
     q: "Is mediation confidential?",

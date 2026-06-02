@@ -204,7 +204,7 @@ const privateTerms = [
   "Each private package is designed as a start-to-finish solution for the dispute.",
   "A non-refundable $50 administrative fee is required to begin the process and is included in the total package price.",
   "If mediation requires more than the allotted 3 hours, additional time is billed at $150 per hour, per person.",
-  "If you need financial assistance, please call Fairfield Center to ask about available options.",
+  "If you need financial assistance, please call FairField Center to ask about available options.",
 ];
 
 function getPathFromSearch(value: string | null): MediationPath {
@@ -530,7 +530,7 @@ function PrivateContent() {
           </div>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
             Prices are listed per person. If you need economic assistance,
-            please call Fairfield Center to ask about available options.
+            please call FairField Center to ask about available options.
           </p>
         </div>
 

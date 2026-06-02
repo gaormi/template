@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "~/components/layout/Container";
@@ -11,6 +12,30 @@ type SearchParams = Promise<{
 const HERO_IMAGE = "/photos/mediation.jpg";
 const PROCESS_IMAGE =
   "https://images.unsplash.com/photo-1762341104168-63ddb56e9805?auto=format&fit=crop&q=80&w=1600";
+
+const pageTitle = "Mediation Services in Virginia | FairField Center";
+const pageDescription =
+  "Confidential mediation for private disputes, court-referred matters, family conflicts, civil cases, and practical agreements in Virginia.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/services/mediation",
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/services/mediation",
+    images: [HERO_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [HERO_IMAGE],
+  },
+};
 
 const valueCards = [
   {
@@ -115,7 +140,7 @@ export default async function MediationPage({
                 </span>
               </h1>
               <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/82 sm:text-xl">
-                Fairfield Center helps individuals, families, businesses, and
+                FairField Center helps individuals, families, businesses, and
                 court-referred parties resolve conflict through a confidential,
                 neutral process focused on practical agreements.
               </p>

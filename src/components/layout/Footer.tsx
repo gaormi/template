@@ -10,9 +10,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <div className="flex items-center gap-2.5">
-              <Image src="/logo.svg" alt="Fairfield Center" width={28} height={28} />
+              <Image src="/logo.svg" alt="FairField Center" width={28} height={28} />
               <h3 className="text-lg font-bold text-primary-700 dark:text-primary-400">
-                Fairfield Center
+                FairField Center
               </h3>
             </div>
             <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-neutral-200 pt-6 text-xs text-neutral-500 dark:border-neutral-800 dark:text-neutral-500">
-          <p>&copy; {new Date().getFullYear()} Fairfield Center. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} FairField Center. All rights reserved.</p>
         </div>
       </Container>
     </footer>

@@ -4,9 +4,9 @@ import Link from "next/link";
 import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 
-const pageTitle = "Contact Fairfield Center";
+const pageTitle = "Contact FairField Center";
 const pageDescription =
-  "Contact Fairfield Center for mediation, police-referred mediation, restorative justice, mediator training, and general inquiries in Harrisonburg, Virginia.";
+  "Contact FairField Center for mediation, police-referred mediation, restorative justice, mediator training, and general inquiries in Harrisonburg, Virginia.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -197,7 +197,7 @@ export default function ContactPage() {
                   Contact
                 </p>
                 <h1 className="mt-6 max-w-3xl text-[2.45rem] font-medium leading-[1.06] text-neutral-950 sm:text-[4rem] lg:text-[4.8rem]">
-                  Contact Fairfield Center
+                  Contact FairField Center
                 </h1>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
                   Use the main office for general questions, or go directly to
@@ -329,7 +329,7 @@ export default function ContactPage() {
               </p>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed text-neutral-600">
                 Review program information before contacting the office, or
-                send a general email and Fairfield Center staff will help route
+                send a general email and FairField Center staff will help route
                 the request.
               </p>
             </div>

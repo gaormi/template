@@ -4,9 +4,9 @@ import Link from "next/link";
 import Container from "~/components/layout/Container";
 import AnimateIn from "~/components/ui/AnimateIn";
 
-const pageTitle = "About Fairfield Center";
+const pageTitle = "About FairField Center";
 const pageDescription =
-  "Founded in 1982, Fairfield Center provides professional conflict resolution, restorative justice services, and training in Virginia.";
+  "Founded in 1982, FairField Center provides professional conflict resolution, restorative justice services, and training in Virginia.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="max-w-4xl">
               <p className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase text-primary-100 backdrop-blur">
                 <span className="h-2 w-2 rounded-full bg-training-300" />
-                About Fairfield Center
+                About FairField Center
               </p>
               <h1 className="mt-6 text-[2.55rem] font-medium leading-[1.05] text-white sm:text-[4.35rem] lg:text-[5.2rem]">
                 Virginia's first mediation center, built for{" "}
@@ -129,7 +129,7 @@ export default function AboutPage() {
               </h1>
               <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/82 sm:text-xl">
                 Founded in 1982, the Community Mediation Center now doing
-                business as the Fairfield Center, was the pioneering
+                business as the FairField Center, was the pioneering
                 organization in Virginia offering professional conflict
                 resolution and restorative justice services and training.
               </p>
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center rounded-full border border-white/28 bg-white/10 px-7 py-3 text-sm font-bold text-white backdrop-blur transition-colors duration-300 hover:bg-white/20"
                 >
-                  Contact Fairfield
+                  Contact FairField
                 </Link>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function AboutPage() {
                   One center, several ways to support conflict resolution.
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
-                  Fairfield Center combines direct services, education, and
+                  FairField Center combines direct services, education, and
                   restorative practices so people can find the right path for
                   the conflict in front of them.
                 </p>

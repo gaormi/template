@@ -88,7 +88,7 @@ const faqs = [
   {
     question: "What about the other parent?",
     answer:
-      "Fairfield strongly recommends that both parents attend. During registration, you will be asked whether you want to attend with the other parent.",
+      "FairField strongly recommends that both parents attend. During registration, you will be asked whether you want to attend with the other parent.",
   },
   {
     question: "Who should attend?",
@@ -98,7 +98,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Co-Parenting Class | Meeting in the Middle | Fairfield Center",
+  title: "Parenting Workshops | Meeting in the Middle | FairField Center",
   description:
     "Court-approved online co-parenting class for parents and caregivers raising children in two households.",
   alternates: {
@@ -417,7 +417,7 @@ export default function CoParentingPage() {
                       year.
                     </li>
                     <li>
-                      Fairfield notes refunds minus a 10% administrative fee
+                      FairField notes refunds minus a 10% administrative fee
                       when canceling more than 10 days before the training date;
                       no refunds within 7 days.
                     </li>

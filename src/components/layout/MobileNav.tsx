@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { DONATION_URL } from "~/components/const/links";
 
 interface NavLink {
   href: string;
@@ -86,10 +87,10 @@ export default function MobileNav({
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="relative h-7 w-7 overflow-hidden rounded-full bg-white">
-              <Image src="/logo.svg" alt="Fairfield Center" fill className="object-cover" />
+              <Image src="/logo.svg" alt="FairField Center" fill className="object-cover" />
             </span>
             <span className="text-base font-bold text-neutral-900 dark:text-neutral-100">
-              Fairfield Center
+              FairField Center
             </span>
           </div>
           <button
@@ -155,7 +156,9 @@ export default function MobileNav({
           </Link>
 
           <Link
-            href="/contact"
+            href={DONATION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onClose}
             className={`mt-3 rounded-lg px-4 py-2.5 text-center text-sm font-semibold text-white shadow-sm ${theme.button}`}
           >

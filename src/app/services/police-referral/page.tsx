@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "~/components/layout/Container";
@@ -13,6 +14,30 @@ const CONTACT_IMAGE =
   "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1400";
 const REFERRAL_FORM_URL =
   "https://drive.google.com/file/d/1ANjUkPPAkhCrM39vhfTY-gy02MVIKVei/view?usp=drive_link";
+
+const pageTitle = "Police Referral Mediation Program | FairField Center";
+const pageDescription =
+  "Police-referred mediation, conciliation, restorative justice, and listening sessions for eligible community conflicts in Virginia.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/services/police-referral",
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/services/police-referral",
+    images: [HERO_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [HERO_IMAGE],
+  },
+};
 
 const quickFacts = [
   {
@@ -134,7 +159,7 @@ export default function PoliceReferralPage() {
                 </span>
               </h1>
               <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/82 sm:text-xl">
-                A partnership between the Fairfield Center and local law
+                A partnership between the FairField Center and local law
                 enforcement agencies to resolve community conflicts through
                 constructive dialogue.
               </p>
@@ -230,7 +255,7 @@ export default function PoliceReferralPage() {
                   When officers encounter non-violent situations where a
                   criminal charge isn't necessary, but conflict or tension
                   remains, they can refer the individuals involved to the
-                  Fairfield Center.
+                  FairField Center.
                 </p>
                 <p className="mt-5 max-w-2xl text-lg leading-relaxed text-neutral-500">
                   This initiative runs from October 2024 through October 2027
@@ -360,7 +385,7 @@ export default function PoliceReferralPage() {
                   Pilot Project Background
                 </h2>
                 <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/75">
-                  Fairfield Center is proud to be part of a federally funded
+                  FairField Center is proud to be part of a federally funded
                   pilot project coordinated by Resolution Virginia. Secured by
                   U.S. Senators Mark R. Warner and Tim Kaine as part of the
                   fiscal 2024 appropriations bill, this initiative aims to

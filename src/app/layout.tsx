@@ -29,8 +29,6 @@ import {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  minimumScale: 1,
-  maximumScale: 1,
   interactiveWidget: "resizes-content",
   viewportFit: "cover",
 };
@@ -41,7 +39,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   manifest: "/manifest.json",
   icons: {
-    icon: [{ url: "/favicon.ico" }],
+    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
+    shortcut: ["/logo.svg"],
   },
   appleWebApp: {
     capable: true,

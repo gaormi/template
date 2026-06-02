@@ -5,9 +5,9 @@ import AnimateIn from "~/components/ui/AnimateIn";
 import Button from "~/components/ui/Button";
 import StepAccordion from "~/components/ui/StepAccordion";
 
-const pageTitle = "Mediator Training in Virginia | Fairfield Center";
+const pageTitle = "Mediator Training in Virginia | FairField Center";
 const pageDescription =
-  "Become a Virginia certified mediator with Fairfield Center's Supreme Court-approved training tracks, mentorship support, course schedule, and application resources.";
+  "Become a Virginia certified mediator with FairField Center's Supreme Court-approved training tracks, mentorship support, course schedule, and application resources.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/photos/training-hero.jpg",
-        alt: "Fairfield Center mediator training program",
+        alt: "FairField Center mediator training program",
       },
     ],
   },
@@ -111,7 +111,7 @@ const steps = [
   {
     num: "04",
     title: "Complete Mentorship",
-    content: "After training, you work with a Virginia-certified mentor mediator. This includes observing real mediation sessions and co-mediating cases under supervision. Fairfield Center can pair you with a mentor and provides an OES-approved 8-hour Observation Course when live cases aren't available.",
+    content: "After training, you work with a Virginia-certified mentor mediator. This includes observing real mediation sessions and co-mediating cases under supervision. FairField Center can pair you with a mentor and provides an OES-approved 8-hour Observation Course when live cases aren't available.",
     image: "/photos/step-4.jpg",
     icon: <UsersSmIcon />,
   },
@@ -125,7 +125,7 @@ const steps = [
   {
     num: "06",
     title: "Stay Current",
-    content: "Certified mediators must earn Continuing Mediator Education (CME) credits and apply for recertification periodically. Fairfield Center offers OES-compliant CME courses and ethics workshops to keep your certification active.",
+    content: "Certified mediators must earn Continuing Mediator Education (CME) credits and apply for recertification periodically. FairField Center offers OES-compliant CME courses and ethics workshops to keep your certification active.",
     image: "/photos/step-6.jpg",
     icon: <RefreshIcon />,
   },
@@ -509,7 +509,7 @@ export default function TrainingPage() {
           </AnimateIn>
           <AnimateIn animation="fade-up" delay={200}>
             <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/82 sm:text-xl">
-              Fairfield Center offers all four Virginia Supreme Court
+              FairField Center offers all four Virginia Supreme Court
               certification tracks. Our training meets the January 2026
               OES guidelines and includes mentorship support to guide you
               from your first class to full certification.

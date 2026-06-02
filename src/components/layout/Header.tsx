@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import MobileNav from "./MobileNav";
+import { DONATION_URL } from "~/components/const/links";
 
 const servicesLinks = [
   { href: "/services/mediation", label: "Mediation" },
@@ -77,10 +78,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
             <span className="relative h-9 w-9 overflow-hidden rounded-full bg-white/80">
-              <Image src="/logo.svg" alt="Fairfield Center" fill className="object-cover" />
+              <Image src="/logo.svg" alt="FairField Center" fill className="object-cover" />
             </span>
             <span className="text-base font-bold text-neutral-800 sm:text-lg lg:text-xl">
-              Fairfield Center
+              FairField Center
             </span>
           </Link>
 
@@ -131,7 +132,9 @@ export default function Header() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
             <Link
-              href="/contact"
+              href={DONATION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hidden rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors sm:block md:px-5 ${navTheme.cta}`}
             >
               Donate

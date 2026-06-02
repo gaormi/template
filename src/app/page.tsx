@@ -1,9 +1,35 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "~/components/layout/Container";
 import Button from "~/components/ui/Button";
 import AnimateIn from "~/components/ui/AnimateIn";
 import FAQ from "~/components/ui/FAQ";
+import { DONATION_URL } from "~/components/const/links";
+
+const pageTitle = "FairField Center | Mediation, Training & Restorative Justice";
+const pageDescription =
+  "FairField Center provides mediation, restorative justice, police-referred mediation, and mediator training for Virginia communities.";
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: "/",
+    images: ["/og.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: ["/og.jpg"],
+  },
+};
 
 /* ── Icons ── */
 const ScaleIcon = ({ className }: { className?: string }) => (
@@ -102,7 +128,7 @@ export default function Home() {
 
               <AnimateIn animation="fade-up" delay={200}>
                 <p className="mt-7 max-w-2xl text-lg leading-relaxed text-neutral-600">
-                  Fairfield Center provides expert neutral ground and
+                  FairField Center provides expert neutral ground and
                   professional guidance to navigate complex disputes and foster
                   restorative justice for a stronger community.
                 </p>
@@ -131,7 +157,7 @@ export default function Home() {
                   <div className="relative w-[58%] shrink-0">
                     <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
                       <Image
-                        src="/photos/hero-main.jpg"
+                        src="/photos/hero-main.webp"
                         alt="People enjoying a sunny day together in a community park"
                         fill
                         className="object-cover"
@@ -156,12 +182,11 @@ export default function Home() {
                   <div className="relative w-[42%]">
                     <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
                       <Image
-                        src="/photos/hero-hands.jpg"
+                        src="/photos/hero-hands.webp"
                         alt="Two people shaking hands, symbolizing agreement and peace"
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 40vw, 20vw"
-                        priority
                       />
                     </div>
                   </div>
@@ -231,7 +256,7 @@ export default function Home() {
                   {/* Community image */}
                   <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=1200"
+                      src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=70&w=700"
                       alt="Diverse community members smiling together"
                       fill
                       className="object-cover"
@@ -257,7 +282,7 @@ export default function Home() {
                   and restore relationships.
                 </p>
                 <p className="mt-4 leading-relaxed text-neutral-600 dark:text-neutral-400">
-                  Founded as Virginia&apos;s first mediation center, Fairfield
+                  Founded as Virginia&apos;s first mediation center, FairField
                   Center was created as a progressive alternative to the
                   adversarial court system. For over 40 years, we have grown
                   from a local initiative into a statewide resource hub.
@@ -459,7 +484,7 @@ export default function Home() {
                   style={{ borderRadius: "50% 0.75rem 50% 50%" }}
                 >
                   <Image
-                    src="/photos/training.jpg"
+                    src="/photos/training.webp"
                     alt="Professional training workshop in session"
                     fill
                     className="object-cover"
@@ -586,11 +611,13 @@ export default function Home() {
 
                 {/* Right — Description + Features */}
                 <div className="flex flex-col justify-between">
-                  <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-                    Our court-approved co-parenting education class helps parents
-                    develop effective communication skills and create a cooperative
-                    parenting plan that puts children first.
-                  </p>
+                  <div className="border-l-4 border-coparent-500 pl-5">
+                    <p className="text-lg font-semibold leading-relaxed text-neutral-900 dark:text-neutral-100">
+                      Our court-approved co-parenting education class helps parents
+                      develop effective communication skills and create a cooperative
+                      parenting plan that puts children first.
+                    </p>
+                  </div>
 
                   <div className="mt-8 space-y-6">
                     {[
@@ -646,7 +673,7 @@ export default function Home() {
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {[
               {
-                quote: "Fairfield Center provided a bridge when we thought all communication had been destroyed. Their team is compassionate and truly professional.",
+                quote: "FairField Center provided a bridge when we thought all communication had been destroyed. Their team is compassionate and truly professional.",
                 role: "Mediation Client",
                 color: "primary" as const,
               },
@@ -739,10 +766,12 @@ export default function Home() {
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
-                  href="/contact"
+                  href={DONATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-primary-700 shadow-lg transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 active:scale-[0.98]"
                 >
-                  Donate to Fairfield
+                  Donate to FairField
                 </Link>
                 <Button
                   href="/contact"
