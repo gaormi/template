@@ -166,8 +166,8 @@ const routeTone = {
 const officeNotes = [
   {
     label: "Hours",
-    value:
-      "Monday-Friday, 9:00 AM-5:00 PM. Closed on Federal Holidays. Schedule follows local court closures.",
+    value: "Monday-Friday, 9:00 AM-5:00 PM",
+    note: "Closed on Federal Holidays. Schedule follows local court closures.",
   },
   {
     label: "Appointments",
@@ -276,6 +276,11 @@ export default function ContactPage() {
                   <p className="mt-3 text-sm font-semibold leading-relaxed text-neutral-800">
                     {note.value}
                   </p>
+                  {"note" in note ? (
+                    <p className="mt-2 text-xs leading-relaxed text-neutral-400">
+                      {note.note}
+                    </p>
+                  ) : null}
                 </div>
               ))}
             </div>
