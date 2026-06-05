@@ -3,9 +3,10 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client"
-  runtime  = "cloudflare"
-  output   = "../src/generated/prisma"
+  provider   = "prisma-client"
+  runtime    = "nodejs"
+  engineType = "client"
+  output     = "../src/generated/prisma"
 }
 
 model User {

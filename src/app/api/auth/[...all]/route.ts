@@ -1,7 +1,13 @@
 import { getAuth } from "~/util/server/auth";
 
-function handler(request: Request) {
-  return getAuth().handler(request);
+async function handler(request: Request) {
+  try {
+    return await getAuth().handler(request);
+  } catch (error) {
+    const url = new URL(request.url);
+    console.error("[auth]", request.method, url.pathname, error);
+    throw error;
+  }
 }
 
 export {
