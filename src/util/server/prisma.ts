@@ -1,6 +1,6 @@
 import { getCloudflareContext } from "@opennextjs/cloudflare";
-import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "~/generated/prisma/client";
 
 export const getPrisma = () => {
   const { env } = getCloudflareContext();

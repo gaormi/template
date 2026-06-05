@@ -1,12 +1,11 @@
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
+  provider = "prisma-client"
+  runtime  = "cloudflare"
+  output   = "../src/generated/prisma"
 }
 
 // TODO: Replace with your own models (see SETUP.md)
